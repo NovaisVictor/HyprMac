@@ -60,7 +60,8 @@ private typealias WindowQueryResultCopyWindowsFn = @convention(c) (CFTypeRef) ->
 private typealias WindowIteratorAdvanceFn = @convention(c) (CFTypeRef) -> Bool
 private typealias WindowIteratorGetCornerRadiiFn = @convention(c) (CFTypeRef) -> Unmanaged<CFArray>?
 
-private struct CornerRadiusFns {
+// @safe: private storage of the SkyLight class, only called through its methods
+@safe private struct CornerRadiusFns {
     let queryWindows: WindowQueryWindowsFn
     let queryResultCopyWindows: WindowQueryResultCopyWindowsFn
     let iteratorAdvance: WindowIteratorAdvanceFn

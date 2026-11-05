@@ -13,7 +13,10 @@ struct ArgbColor: Equatable, Sendable, CustomStringConvertible {
     var green: CGFloat { component(shift: 8) }
     var blue: CGFloat { component(shift: 0) }
 
-    var hexDescription: String { "0x" + String(format: "%08x", argb) }
+    var hexDescription: String {
+        let hex = String(argb, radix: 16)
+        return "0x" + String(repeating: "0", count: 8 - hex.count) + hex
+    }
     var description: String { hexDescription }
 
     private func component(shift: UInt32) -> CGFloat { CGFloat((argb >> shift) & 0xFF) / 255 }

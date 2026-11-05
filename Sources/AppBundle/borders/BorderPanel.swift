@@ -171,7 +171,9 @@ final class BorderPanel: NSPanel, BorderOverlay {
             glow.clip.mask?.cornerRadius = frames.glowClipCornerRadius
             glow.shadow.frame = bounds
             let radius = frames.glowShapeCornerRadius
-            glow.shadow.shadowPath = CGPath(roundedRect: frames.glowShape, cornerWidth: radius, cornerHeight: radius, transform: nil)
+            let shadowPath = CGMutablePath()
+            shadowPath.addRoundedRect(in: frames.glowShape, cornerWidth: radius, cornerHeight: radius)
+            glow.shadow.shadowPath = shadowPath
         }
         CATransaction.commit()
     }
