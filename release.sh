@@ -39,6 +39,10 @@ case "$(gh repo view --json viewerPermission -q .viewerPermission)" in
 esac
 
 if test $local == 1; then
+    # setup.sh links them into .deps/bin only when they are installed. The CI installs them with brew
+    for tool in fish cargo bundler; do
+        test -x ".deps/bin/$tool" || fail "--local needs $tool, used by build-shell-completion.sh and build-docs.sh (brew install fish rust ruby)"
+    done
     ./build-release.sh --build-version "$version" --codesign-identity -
     ./script/publish-release.sh "$version" ".release/HyprMac-$version.zip"
 else
