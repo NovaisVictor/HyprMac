@@ -113,7 +113,18 @@ extension MonitorInfo {
 }
 
 @MainActor func gcMonitors() {
-    if pointToMonitor.count != globalUnsortedMonitorInfos.count {
+    if monitorsChanged(cached: pointToMonitor.mapValues(\.info), current: globalUnsortedMonitorInfos) {
         rearrangeMonitors()
+    }
+}
+
+/// Comparing only the count misses a monitor that replaces another one at the same position, e.g. unplugging the
+/// only external monitor and opening the lid: the built-in display takes (0, 0), and the workspaces kept being laid
+/// out in the external monitor rect. A new resolution, name or visible area must refresh the cached info too
+func monitorsChanged(cached: [CGPoint: MonitorInfo], current: [MonitorInfo]) -> Bool {
+    if cached.count != current.count { return true }
+    return current.contains { info in
+        guard let old = cached[info.rect.topLeftCorner] else { return true }
+        return old.rect != info.rect || old.visibleRect != info.visibleRect || old.name != info.name
     }
 }
