@@ -31,9 +31,9 @@ check-equals() {
 
 check-equals ".release/HyprMac.app layout" "$expected_layout" "$(find .release/HyprMac.app)"
 
-check-universal-binary() {
-    if ! file "$1" | grep --fixed-string -q "Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64"; then
-        echo "$1 is not a universal binary"
+check-arm64-binary() {
+    if test "$(lipo -archs "$1")" != arm64; then
+        echo "$1 isn't an arm64-only binary: $(lipo -archs "$1")"
         exit 1
     fi
 }
@@ -54,13 +54,13 @@ check-no-rpath-dylibs() {
 }
 
 check-rpaths() {
-    for arch in x86_64 arm64; do
+    for arch in arm64; do
         check-equals "$1 ($arch) rpaths" "$2" "$(xcrun objdump --macho --rpaths --no-leading-headers --arch "$arch" "$1")"
     done
 }
 
 check-dylibs() {
-    for arch in x86_64 arm64; do
+    for arch in arm64; do
         check-equals "$1 ($arch) dylibs" "$2" "$(xcrun objdump --macho --dylibs-used --no-leading-headers --arch "$arch" "$1" |
             sed -E 's/ \(compatibility version [^)]*, weak\)$/ (weak)/; s/ \(compatibility version [^)]*\)$//' |
             # Allow anything from /usr/lib/swift. Different Xcode versions link slightly different dylibs
@@ -116,8 +116,8 @@ EOF
 )
 check-dylibs .release/hyprmac "$expected_cli_dylibs"
 
-check-universal-binary .release/HyprMac.app/Contents/MacOS/HyprMac
-check-universal-binary .release/hyprmac
+check-arm64-binary .release/HyprMac.app/Contents/MacOS/HyprMac
+check-arm64-binary .release/hyprmac
 
 codesign -v .release/HyprMac.app
 codesign -v .release/hyprmac

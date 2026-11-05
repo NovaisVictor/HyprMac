@@ -1,4 +1,4 @@
-cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by .github/workflows/release.yml
+cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by script/publish-release.sh
   version "{{VERSION}}"
   sha256 "{{SHA256}}"
 
@@ -8,6 +8,7 @@ cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by .github/work
   homepage "https://github.com/NovaisVictor/HyprMac"
 
   depends_on macos: :ventura # macOS 13, Package.swift: platforms: [.macOS(.v13)]
+  depends_on arch: :arm64 # build-release.sh builds Apple Silicon binaries only
 
   postflight_steps do
     run "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "{{staged_path}}/HyprMac-#{version}/bin/hyprmac"], must_succeed: false

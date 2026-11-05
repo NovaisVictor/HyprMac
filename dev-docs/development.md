@@ -52,7 +52,10 @@ If you only plan to build the debug version of HyprMac, you can run it from the 
     (the source files have `Generated` suffix in their names).
 
 **Release build**
--   `build-release.sh` - Build release build to `.release` dir by using Xcode.
+-   `build-release.sh` - Build release build to `.release` dir by using Xcode. Apple Silicon (arm64) only.
+-   `release.sh <version>` - Release `<version>` from the pushed HEAD of `main`: the GitHub release, the `v<version>` tag
+    and the cask in `NovaisVictor/homebrew-tap`. It runs `.github/workflows/release.yml` on GitHub Actions.
+    `release.sh <version> --local` builds and publishes from your machine instead: faster, with your `gh` and `git` credentials.
 -   `install-from-sources.sh` - Build release build from sources and install it as `hyprmac-dev` brew cask.
     This script is "work in progress".
     Use it on your own risk.

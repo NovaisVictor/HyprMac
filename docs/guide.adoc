@@ -1529,7 +1529,7 @@ HyprMac listens on a Unix-domain stream socket:
 === Wire format
 
 All numbers on the wire are 4-byte unsigned integers in host byte order.
-HyprMac only runs on Apple Silicon and Intel macOS, both little-endian, so in practice the framing is always 4 bytes, little-endian.
+HyprMac only runs on Apple Silicon, which is little-endian, so in practice the framing is always 4 bytes, little-endian.
 
 Immediately after connecting, both sides perform a *one-shot handshake*:
 

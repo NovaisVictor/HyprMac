@@ -49,6 +49,7 @@ if /bin/test -z "${NUKE_PATH:-}"; then
     add-optional-dep-to-bin bundler # build-docs.sh
     add-optional-dep-to-bin xcbeautify # build-release.sh
     add-optional-dep-to-bin git
+    add-optional-dep-to-bin gh # release.sh, publish-release.sh
     add-swift-to-bin
     add-optional-dep-to-bin swiftly
 

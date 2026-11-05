@@ -2,52 +2,37 @@
 cd "$(dirname "$0")/.."
 source ./script/setup.sh
 
-build_version=""
-cask_git_repo_path=""
-site_git_repo_path=""
-while test $# -gt 0; do
-    case $1 in
-        --build-version) build_version="$2"; shift 2;;
-        --cask-git-repo-path) cask_git_repo_path="$2"; shift 2;;
-        --site-git-repo-path) site_git_repo_path="$2"; shift 2;;
-        *) echo "Unknown option $1"; exit 1;;
-    esac
-done
+# Publishes a release built by build-release.sh: the GitHub release, which creates the v<version> tag on HEAD,
+# and the Homebrew cask in the tap. Shared by .github/workflows/release.yml and `./release.sh --local`.
+#
+# Optional env:
+# - HYPRMAC_TAP_REMOTE: git remote of the tap. Defaults to https, which uses your git credentials
+# - HYPRMAC_TAP_AUTHOR_NAME, HYPRMAC_TAP_AUTHOR_EMAIL: author of the tap commit. Default to this repo's git user
 
-if test -z "$build_version"; then
-    echo "--build-version flag is mandatory" > /dev/stderr
+if test $# -ne 2; then
+    echo "Usage: $0 <version> <archive>" > /dev/stderr
+    exit 1
+fi
+version=$1
+archive=$2
+if ! test -f "$archive"; then
+    echo "ERROR: $archive doesn't exist. Run build-release.sh first" > /dev/stderr
     exit 1
 fi
 
-if ! test -d "$cask_git_repo_path"; then
-    echo "--cask-git-repo-path is a mandatory flag that must point to existing directory" > /dev/stderr
-    exit 1
-fi
+sha256=$(shasum -a 256 "$archive" | cut -d ' ' -f 1)
+gh release create "v$version" "$archive" --target "$(git rev-parse HEAD)" --title "HyprMac $version" --generate-notes
 
-if ! test -d "$site_git_repo_path"; then
-    echo "--site-git-repo-path is a mandatory flag that must point to existing directory" > /dev/stderr
-    exit 1
-fi
+tap_dir=$(mktemp -d)
+trap 'rm -rf "$tap_dir"' EXIT
+git clone --quiet --depth 1 "${HYPRMAC_TAP_REMOTE:-https://github.com/NovaisVictor/homebrew-tap.git}" "$tap_dir"
+mkdir -p "$tap_dir/Casks"
+sed -e "s/{{VERSION}}/$version/" -e "s/{{SHA256}}/$sha256/" packaging/hyprmac.rb.template > "$tap_dir/Casks/hyprmac.rb"
+git -C "$tap_dir" add Casks/hyprmac.rb
+git -C "$tap_dir" \
+    -c user.name="${HYPRMAC_TAP_AUTHOR_NAME:-$(git config user.name)}" \
+    -c user.email="${HYPRMAC_TAP_AUTHOR_EMAIL:-$(git config user.email)}" \
+    commit --quiet -m "hyprmac $version"
+git -C "$tap_dir" push --quiet
 
-./test.sh
-./build-release.sh --build-version "$build_version"
-
-git tag -a "v$build_version" -m "v$build_version" && git push git@github.com:NovaisVictor/HyprMac.git "v$build_version"
-link="https://github.com/NovaisVictor/HyprMac/releases/new?tag=v$build_version"
-open "$link" || { echo "$link"; exit 1; }
-sleep 1
-open -R "./.release/HyprMac-$build_version.zip"
-
-echo "Please upload .zip to GitHub release and hit Enter"
-read -r
-
-./script/build-brew-cask.sh \
-    --cask-name hyprmac \
-    --zip-uri "https://github.com/NovaisVictor/HyprMac/releases/download/v$build_version/HyprMac-$build_version.zip" \
-    --build-version "$build_version"
-
-eval "$cask_git_repo_path/pin.sh"
-cp -r .release/hyprmac.rb "$cask_git_repo_path/Casks/hyprmac.rb"
-
-rm -rf "${site_git_repo_path:?}/*" # https://www.shellcheck.net/wiki/SC2115
-cp -r .site/* "$site_git_repo_path"
+echo "Released HyprMac $version: brew update && brew upgrade --cask hyprmac"

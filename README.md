@@ -58,7 +58,7 @@ The cask installs `HyprMac.app`, the `hyprmac` CLI, the man pages and the bash, 
 >   `xattr -dr com.apple.quarantine /Applications/HyprMac.app`
 > - macOS asks for the Accessibility permission again after every update, because the ad-hoc signature changes with each release.
 
-HyprMac runs on macOS 13+.
+HyprMac runs on macOS 13+ on Apple Silicon.
 
 ## Configuration
 
