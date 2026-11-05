@@ -2,18 +2,17 @@
 
 <img src="./resources/Assets.xcassets/AppIcon.appiconset/icon.png" width="30%" align="right">
 
-HyprMac is a tiling window manager for macOS with Hyprland-like features.
-It's based on [AeroSpace](https://github.com/nikitabobko/AeroSpace), the i3-like tiling window manager by Nikita Bobko,
-and keeps its model: a tree of containers, emulated workspaces, plain text config, CLI first, and no need to disable SIP.
+HyprMac is an i3-like tiling window manager for macOS with Hyprland-like features:
+a tree of containers, emulated workspaces, plain text config, CLI first, and no need to disable SIP.
 
 Docs:
 - [Guide](./docs/guide.adoc)
 - [Commands](./docs/commands.adoc)
 - [Goodies](./docs/goodies.adoc)
 
-## Features added on top of AeroSpace
+## Hyprland-like features
 
-All of them are opt-in: without configuration, HyprMac behaves like AeroSpace.
+All of them are opt-in: without configuration, HyprMac behaves like a classic i3-like tiling window manager.
 
 - **Layouts**
   - [Dwindle](./docs/guide.adoc#new-window-placement) new window placement
@@ -74,15 +73,12 @@ Copy it as a starting point:
 cp /Applications/HyprMac.app/Contents/Resources/default-config.toml ~/.hyprmac.toml
 ```
 
-AeroSpace configs work after renaming the file, except for:
-- `if.during-aerospace-startup` in `on-window-detected`, renamed to `if.during-hyprmac-startup`;
-- the `AEROSPACE_*` environment variables passed to callbacks, renamed to `HYPRMAC_*` (e.g. `HYPRMAC_WINDOW_ID`, `HYPRMAC_FOCUSED_WORKSPACE`).
-
 ## Development
 
 See [dev-docs/development.md](./dev-docs/development.md).
 
-## Attribution and license
+## License
 
-HyprMac is based on [AeroSpace](https://github.com/nikitabobko/AeroSpace) by Nikita Bobko, licensed under MIT.
-HyprMac is licensed under MIT as well. See [LICENSE.txt](./LICENSE.txt) and the third-party notices in [legal/](./legal).
+HyprMac is licensed under MIT. See [LICENSE.txt](./LICENSE.txt) and the third-party notices in [legal/](./legal).
+
+Based on [AeroSpace](https://github.com/nikitabobko/AeroSpace) by Nikita Bobko, MIT.

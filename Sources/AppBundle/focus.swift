@@ -13,7 +13,7 @@ extension LiveFocus {
 
 /// This object should be only passed around but never memorized
 /// Alternative name: ResolvedFocus
-struct LiveFocus: AeroAny, Equatable {
+struct LiveFocus: HyprMacAny, Equatable {
     let windowOrNil: Window?
     var workspace: Workspace
 
@@ -30,7 +30,7 @@ struct LiveFocus: AeroAny, Equatable {
 /// It's safe to keep a hard reference to this object.
 /// Unlike in LiveFocus, information inside FrozenFocus isn't guaranteed to be self-consistent.
 /// window - workspace - monitor relation could change since the moment object was created
-private struct FrozenFocus: AeroAny, Equatable, Sendable {
+private struct FrozenFocus: HyprMacAny, Equatable, Sendable {
     let windowId: OpaqueWindowId?
     let workspaceName: String
     // monitorId is not part of the focus. We keep it here only for 'on-focused-monitor-changed' to work

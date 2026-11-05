@@ -9,7 +9,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : "chrome://newtab/",
@@ -24,7 +24,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXGrowArea" : null,
   "AXMain" : 1,
@@ -36,7 +36,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -61,9 +61,9 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=14057, title=\"\", role=\"AXTextField\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -81,24 +81,24 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=14057, title=\"New Tab - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.google.Chrome",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
-  "Aero.App.version" : "7049.116",
-  "Aero.App.versionShort" : "135.0.7049.116",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 14057,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.google.Chrome",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
+  "HyprMac.App.version" : "7049.116",
+  "HyprMac.App.versionShort" : "135.0.7049.116",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 14057,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.on-window-detected" : [
     {
       "commands" : "move-node-to-workspace F",
       "matcher" : "appId=\"com.google.Chrome\""
     }
   ],
-  "Aero.treeNodeParent" : "AppBundle.TilingContainer",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "F"
+  "HyprMac.treeNodeParent" : "AppBundle.TilingContainer",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "F"
 }

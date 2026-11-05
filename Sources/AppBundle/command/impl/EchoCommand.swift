@@ -6,12 +6,12 @@ struct EchoCommand: Command {
 
     func run(_ env: CmdEnv, _ io: CmdIo) async -> BinaryExitCode {
         guard let target = args.resolveTargetOrReportError(env, io) else { return .fail }
-        var obj = [AeroObj]()
+        var obj = [HyprMacObj]()
         if let window = target.windowOrNil {
             guard let a: WindowWithPrefetchedTitle = try? await .resolveWindow(window, for: args.args.val.flatMap { $0 }, .nonCancellable) else { return .fail(io.err(bugPrompt())) }
-            obj.append(AeroObj.window(a))
+            obj.append(HyprMacObj.window(a))
         } else {
-            obj.append(AeroObj.workspace(target.workspace))
+            obj.append(HyprMacObj.workspace(target.workspace))
         }
         for argWithInterVars in args.args.val {
             guard let strs = obj.format(argWithInterVars).getOrNil(onFailure: { errs in

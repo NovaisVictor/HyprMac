@@ -9,8 +9,8 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle(noValue)",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxFailed" : "get.AXTitle(noValue)",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : null,
@@ -29,8 +29,8 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle(noValue)",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxFailed" : "get.AXTitle(noValue)",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -55,10 +55,10 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle(noValue)",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxFailed" : "get.AXTitle(noValue)",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : "<AXUIElement 0x72e024690> {pid=6295}",
     "AXFocusedUIElement" : "AXUIElement(windowId_native=186, title=nil, role=\"AXTable\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -77,25 +77,25 @@
       "AXUIElement(windowId_native=186, title=\"1 Reminder\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
       "AXUIElement(windowId_native=258, title=\"Calendar\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFocusedUIElement, AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFocusedUIElement, AXFrontmost"
   },
-  "Aero.App.appBundleId" : "com.microsoft.Outlook",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/Microsoft%20Outlook.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Microsoft%20Outlook.app/Contents/MacOS/Microsoft%20Outlook",
-  "Aero.App.pid" : 6295,
-  "Aero.App.version" : "16.109.26051717",
-  "Aero.App.versionShort" : "16.109.1",
-  "Aero.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXDocument(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXCancelButton(noValue), get.AXToolbarButton(noValue)",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxWritable" : "AXPosition, AXSections, AXMain, AXMinimized",
-  "Aero.windowId_native" : 186,
-  "Aero.macOS.version" : "Version 26.5 (Build 25F71)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.microsoft.Outlook",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/Microsoft%20Outlook.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Microsoft%20Outlook.app/Contents/MacOS/Microsoft%20Outlook",
+  "HyprMac.App.pid" : 6295,
+  "HyprMac.App.version" : "16.109.26051717",
+  "HyprMac.App.versionShort" : "16.109.1",
+  "HyprMac.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXDocument(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXCancelButton(noValue), get.AXToolbarButton(noValue)",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxWritable" : "AXPosition, AXSections, AXMain, AXMinimized",
+  "HyprMac.windowId_native" : 186,
+  "HyprMac.macOS.version" : "Version 26.5 (Build 25F71)",
+  "HyprMac.on-window-detected" : [
     {
       "commands" : "",
       "matcher" : "appId=\"com.microsoft.Outlook\", windowTitleRegexSubstring=\"Reminder\""
@@ -105,7 +105,7 @@
       "matcher" : "appId=\"com.microsoft.Outlook\""
     }
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
-  "Aero.windowLevel" : "alwaysOnTopWindow",
-  "Aero.workspace" : null
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
+  "HyprMac.windowLevel" : "alwaysOnTopWindow",
+  "HyprMac.workspace" : null
 }

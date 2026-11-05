@@ -30,7 +30,7 @@ swift_build_cli=(build -c release --arch arm64 --product hyprmac)
 swift "${swift_build_cli[@]}" -Xswiftc -warnings-as-errors \
     -Xlinker -sectcreate \
     -Xlinker __TEXT \
-    -Xlinker __aero_build \
+    -Xlinker __hyprmac_build \
     -Xlinker "$build_info_file"
 cli_bin_path="$(swift "${swift_build_cli[@]}" --show-bin-path)"
 
@@ -47,7 +47,7 @@ cd ./xcode
         MARKETING_VERSION="$build_version" \
         ARCHS=arm64 \
         HYPRMAC_CODE_SIGN_IDENTITY="$codesign_identity" \
-        HYPRMAC_BUILD_INFO_LDFLAGS="-sectcreate __TEXT __aero_build $build_info_file"
+        HYPRMAC_BUILD_INFO_LDFLAGS="-sectcreate __TEXT __hyprmac_build $build_info_file"
 cd -
 
 cp -r "xcode/.xcode-build/Build/Products/$xcode_configuration/HyprMac.app" .release

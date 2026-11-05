@@ -25,7 +25,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=78408, title=\"test.py – Doom Emacs\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXFocusedWindow" : "AXUIElement(windowId_native=78408, title=\"test.py – Doom Emacs\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -42,19 +42,19 @@
       "AXUIElement(windowId_native=78636, title=\"posframe\", role=\"AXWindow\", subrole=\"AXFloatingWindow\")",
       "AXUIElement(windowId_native=78408, title=\"test.py – Doom Emacs\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "org.gnu.Emacs",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///opt/homebrew/Cellar/emacs-plus@30/30.2/Emacs.app/Contents/MacOS/Emacs-real",
-  "Aero.App.version" : "9.0",
-  "Aero.App.versionShort" : "30.2",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 78636,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.on-window-detected" : [],
-  "Aero.treeNodeParent" : "AppBundle.Workspace",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "1"
+  "HyprMac.App.appBundleId" : "org.gnu.Emacs",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///opt/homebrew/Cellar/emacs-plus@30/30.2/Emacs.app/Contents/MacOS/Emacs-real",
+  "HyprMac.App.version" : "9.0",
+  "HyprMac.App.versionShort" : "30.2",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 78636,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.on-window-detected" : [],
+  "HyprMac.treeNodeParent" : "AppBundle.Workspace",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "1"
 }

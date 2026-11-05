@@ -4,7 +4,7 @@
 name: HyprMac
 
 packages:
-  AeroSpacePackage:
+  HyprMacPackage:
     path: hyprmac-package-symlink
 
 configs:
@@ -31,11 +31,11 @@ targets:
     platform: macOS
     deploymentTarget: ${XCODEGEN_DEPLOYMENT_TARGET}
     sources:
-      - "../Sources/AeroSpaceApp"
+      - "../Sources/HyprMacApp"
       - "../resources"
       - "../docs/config-examples/default-config.toml"
     dependencies:
-      - package: AeroSpacePackage
+      - package: HyprMacPackage
         product: AppBundle
     settings:
       configs:

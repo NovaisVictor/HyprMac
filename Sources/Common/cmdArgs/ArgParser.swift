@@ -46,7 +46,7 @@ struct PosArgParserContext {
     let argPlaceholderIfMandatory: String?
 }
 
-func doubleDashArg<Root: AeroAny>(mandatory: Bool) -> PosArgParser<Root, ()> {
+func doubleDashArg<Root: HyprMacAny>(mandatory: Bool) -> PosArgParser<Root, ()> {
     return ArgParser(
         \.noopKeyPath,
         { input in

@@ -27,7 +27,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : {
       "AXAccessKey" : null,
@@ -69,9 +69,9 @@
       "AXVisibleCharacterRange" : "<AXValue 0xca6f7ccc0> {value = location:0 length:0 type = kAXValueCFRangeType}",
       "AXVisited" : 0,
       "AXWindow" : "AXUIElement(windowId_native=19097, title=\"Choose what to share with meet.google.com\", role=\"AXWindow\", subrole=\"AXUnknown\")",
-      "Aero.AxFailed" : "get.AXURL(noValue), get.AXPlaceholderValue(noValue), get.AXTitleUIElement(noValue), get.AXAccessKey(noValue), get.AXSubrole(noValue), get.AXColumnHeaderUIElements(noValue), get.AXCustomContent(noValue)",
-      "Aero.AxIgnored" : "AXFocused, AXRoleDescription, AXHelp, AXChildren, AXSize, AXFocusableAncestor, AXPosition, AXFrame",
-      "Aero.AxWritable" : "AXSelectedText, AXSelectedTextRange, AXValue, AXCustomContent",
+      "HyprMac.AxFailed" : "get.AXURL(noValue), get.AXPlaceholderValue(noValue), get.AXTitleUIElement(noValue), get.AXAccessKey(noValue), get.AXSubrole(noValue), get.AXColumnHeaderUIElements(noValue), get.AXCustomContent(noValue)",
+      "HyprMac.AxIgnored" : "AXFocused, AXRoleDescription, AXHelp, AXChildren, AXSize, AXFocusableAncestor, AXPosition, AXFrame",
+      "HyprMac.AxWritable" : "AXSelectedText, AXSelectedTextRange, AXValue, AXCustomContent",
       "ChromeAXNodeId" : "2160"
     },
     "AXFocusedWindow" : "AXUIElement(windowId_native=19097, title=\"Choose what to share with meet.google.com\", role=\"AXWindow\", subrole=\"AXUnknown\")",
@@ -90,28 +90,28 @@
       "AXUIElement(windowId_native=19097, title=\"Choose what to share with meet.google.com\", role=\"AXWindow\", subrole=\"AXUnknown\")",
       "AXUIElement(windowId_native=19068, title=\"Meet – sqg-eqgf-jjj - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFrontmost"
   },
-  "Aero.App.appBundleId" : "com.google.Chrome",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/Google%20Chrome.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
-  "Aero.App.pid" : 88242,
-  "Aero.App.version" : "7871.47",
-  "Aero.App.versionShort" : "150.0.7871.47",
-  "Aero.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxWritable" : "AXPosition, AXSections",
-  "Aero.windowId_native" : 19097,
-  "Aero.macOS.version" : "Version 26.5.1 (Build 25F80)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.google.Chrome",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/Google%20Chrome.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
+  "HyprMac.App.pid" : 88242,
+  "HyprMac.App.version" : "7871.47",
+  "HyprMac.App.versionShort" : "150.0.7871.47",
+  "HyprMac.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxWritable" : "AXPosition, AXSections",
+  "HyprMac.windowId_native" : 19097,
+  "HyprMac.macOS.version" : "Version 26.5.1 (Build 25F80)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : null
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : null
 }

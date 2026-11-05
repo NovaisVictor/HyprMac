@@ -5,7 +5,7 @@ import os
 // on-window-title-changed callbacks and the window-title-changed event.
 //
 // The AX observer only marks the window as changed. The title is re-read when the debounce fires: the payload of the
-// notification isn't trusted (https://github.com/nikitabobko/AeroSpace/issues/1519), and the title often changes several
+// notification isn't trusted, and the title often changes several
 // times in a row. The callbacks are edge triggered: a callback runs when its `if` starts matching the window, not
 // every time the title changes while it matches
 

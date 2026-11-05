@@ -12,7 +12,7 @@
     "AXTitle" : "",
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
     "AXWindow" : "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : null,
@@ -48,9 +48,9 @@
     "AXTitle" : "",
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
     "AXWindow" : "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=3126, title=nil, role=\"AXTextArea\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
@@ -59,7 +59,7 @@
     "AXFunctionRowTopLevelElements" : [
 
     ],
-    "AXMainWindow" : "AXUIElement(windowId_native=15986, title=\"/opt/homebrew/Caskroom/aerospace/0.18.5-Beta/AeroSpace-v0.18.5-Beta/legal\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+    "AXMainWindow" : "AXUIElement(windowId_native=15986, title=\"/opt/homebrew/Caskroom/hyprmac/0.18.5-Beta/HyprMac-v0.18.5-Beta/legal\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXMenuBar" : "<AXUIElement 0x600001db24f0> {pid=1312}",
     "AXPosition" : "<AXValue 0x600001db24f0> {value = x:0.000000 y:1169.000000 type = kAXValueCGPointType}",
     "AXRole" : "AXApplication",
@@ -68,24 +68,24 @@
     "AXValue" : null,
     "AXWindows" : [
       "AXUIElement(windowId_native=3126, title=\"Quick Look\", role=\"AXWindow\", subrole=\"Quick Look\")",
-      "AXUIElement(windowId_native=15986, title=\"/opt/homebrew/Caskroom/aerospace/0.18.5-Beta/AeroSpace-v0.18.5-Beta/legal\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+      "AXUIElement(windowId_native=15986, title=\"/opt/homebrew/Caskroom/hyprmac/0.18.5-Beta/HyprMac-v0.18.5-Beta/legal\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
       "<AXUIElement 0x600001db2070> {pid=1312}"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.apple.finder",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
-  "Aero.App.version" : "1732.4.3",
-  "Aero.App.versionShort" : "15.4",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 3126,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxUiElementWindowType" : "dialog",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.apple.finder",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///System/Library/CoreServices/Finder.app/Contents/MacOS/Finder",
+  "HyprMac.App.version" : "1732.4.3",
+  "HyprMac.App.versionShort" : "15.4",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 3126,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxUiElementWindowType" : "dialog",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.Workspace)",
-  "Aero.windowLevel" : "alwaysOnTopWindow",
-  "Aero.workspace" : "M"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.Workspace)",
+  "HyprMac.windowLevel" : "alwaysOnTopWindow",
+  "HyprMac.workspace" : "M"
 }

@@ -11,7 +11,7 @@ struct ListAppsCommand: Command {
             result = result.filter { $0.nsApp.isHidden == hidden }
         }
 
-        lazy var list = result.map(AeroObj.app)
+        lazy var list = result.map(HyprMacObj.app)
         return switch true {
             case args.outputOnlyCount:
                 .succ(io.out("\(result.count)"))

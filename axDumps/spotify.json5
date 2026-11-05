@@ -9,7 +9,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : "https://xpui.app.spotify.com/index.html",
@@ -24,7 +24,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXGrowArea" : null,
   "AXMain" : 1,
@@ -36,7 +36,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -61,9 +61,9 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : null,
     "AXFocusedWindow" : "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -81,21 +81,21 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=14228, title=\"YONAKA - PREDATOR\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.spotify.client",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Spotify.app/Contents/MacOS/Spotify",
-  "Aero.App.version" : "1.2.61.443",
-  "Aero.App.versionShort" : "1.2.61.443",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 14228,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.spotify.client",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Spotify.app/Contents/MacOS/Spotify",
+  "HyprMac.App.version" : "1.2.61.443",
+  "HyprMac.App.versionShort" : "1.2.61.443",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 14228,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "AppBundle.TilingContainer",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "B"
+  "HyprMac.treeNodeParent" : "AppBundle.TilingContainer",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "B"
 }

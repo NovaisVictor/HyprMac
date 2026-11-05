@@ -16,7 +16,7 @@ struct ListMonitorsCommand: Command {
             result = result.filter { (monitor) in (monitor.visibleWorkspace == mouseWorkspace) == mouse }
         }
 
-        lazy var list = result.map(AeroObj.monitor)
+        lazy var list = result.map(HyprMacObj.monitor)
         return switch true {
             case args.outputOnlyCount:
                 .succ(io.out("\(result.count)"))

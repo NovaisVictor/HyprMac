@@ -1,4 +1,4 @@
-// WisprFlow changes it's activationPolicy during runtime which confuses AeroSpace
+// WisprFlow changes it's activationPolicy during runtime which confuses HyprMac
 // This second report is with another activationPolicy
 {
   "AXActivationPoint" : "<AXValue 0x600003de49f0> {value = x:-1.000000 y:1118.000000 type = kAXValueCGPointType}",
@@ -29,7 +29,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : "<AXUIElement 0x600003c2bb10> {pid=30586}",
     "AXFocusedUIElement" : null,
     "AXFocusedWindow" : "AXUIElement(windowId_native=4381, title=\"Hub\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -49,28 +49,28 @@
       "AXUIElement(windowId_native=4379, title=\"Status\", role=\"AXWindow\", subrole=\"AXDialog\")",
       "AXUIElement(windowId_native=4381, title=\"Hub\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXFocusedUIElement(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXManualAccessibility, AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXFocusedUIElement(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXManualAccessibility, AXFrontmost"
   },
-  "Aero.App.appBundleId" : "com.electron.wispr-flow",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/Wispr%20Flow.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Wispr%20Flow.app/Contents/MacOS/Wispr%20Flow",
-  "Aero.App.pid" : 30586,
-  "Aero.App.version" : "1.6.7",
-  "Aero.App.versionShort" : "1.6.7",
-  "Aero.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxWritable" : "AXPosition, AXSections",
-  "Aero.windowId_native" : 4379,
-  "Aero.macOS.version" : "...",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.electron.wispr-flow",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/Wispr%20Flow.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Wispr%20Flow.app/Contents/MacOS/Wispr%20Flow",
+  "HyprMac.App.pid" : 30586,
+  "HyprMac.App.version" : "1.6.7",
+  "HyprMac.App.versionShort" : "1.6.7",
+  "HyprMac.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxWritable" : "AXPosition, AXSections",
+  "HyprMac.windowId_native" : 4379,
+  "HyprMac.macOS.version" : "...",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.FloatingWindowsContainer)",
-  "Aero.windowLevel" : 1000,
-  "Aero.workspace" : "..."
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.FloatingWindowsContainer)",
+  "HyprMac.windowLevel" : 1000,
+  "HyprMac.workspace" : "..."
 }

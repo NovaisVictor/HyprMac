@@ -1,5 +1,5 @@
 ====
-HyprMac is an i3-like tiling window manager for macOS with Hyprland-like features, based on https://github.com/nikitabobko/AeroSpace[AeroSpace]
+HyprMac is an i3-like tiling window manager for macOS with Hyprland-like features
 
 *Project homepage*: https://github.com/NovaisVictor/HyprMac
 

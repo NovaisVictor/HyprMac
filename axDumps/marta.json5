@@ -9,7 +9,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : null,
@@ -24,7 +24,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXGrowArea" : null,
   "AXMain" : 1,
@@ -36,7 +36,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -63,9 +63,9 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=14545, title=nil, role=\"AXScrollArea\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -83,21 +83,21 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=14545, title=\"Marta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "org.yanex.marta",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Marta.app/Contents/MacOS/Marta",
-  "Aero.App.version" : "0.8.200",
-  "Aero.App.versionShort" : "0.8.2",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 14545,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "org.yanex.marta",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Marta.app/Contents/MacOS/Marta",
+  "HyprMac.App.version" : "0.8.200",
+  "HyprMac.App.versionShort" : "0.8.2",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 14545,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "AppBundle.TilingContainer",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "M"
+  "HyprMac.treeNodeParent" : "AppBundle.TilingContainer",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "M"
 }

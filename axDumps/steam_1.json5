@@ -1,5 +1,5 @@
 // Steam is weird. It shows one visible window, but creates 2 AX objects.
-// AeroSpace has to deliberatery ignore the redundant AX object to avoid weird focus issues
+// HyprMac has to deliberatery ignore the redundant AX object to avoid weird focus issues
 // ./steam_1.json5 -- valid AX object
 // ./steam_2.json5 -- weird AX object
 {
@@ -30,7 +30,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : null,
     "AXFocusedWindow" : "AXUIElement(windowId_native=18969, title=\"Steam\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -48,28 +48,28 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=18969, title=\"Steam\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXFocusedUIElement(noValue), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXMenuBar(noValue), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXFocusedUIElement(noValue), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXMenuBar(noValue), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFrontmost"
   },
-  "Aero.App.appBundleId" : "com.valvesoftware.steam.helper",
-  "Aero.App.nsApp.activationPolicy" : "accessory",
-  "Aero.App.nsApp.appBundlePath" : "file:///Users/bobko/Library/Application%20Support/Steam/Steam.AppBundle/Steam/Contents/Frameworks/Steam%20Helper.app/",
-  "Aero.App.nsApp.execPath" : "file:///Users/bobko/Library/Application%20Support/Steam/Steam.AppBundle/Steam/Contents/Frameworks/Steam%20Helper.app/Contents/MacOS/Steam%20Helper",
-  "Aero.App.pid" : 86598,
-  "Aero.App.version" : "1650.57",
-  "Aero.App.versionShort" : "31.0.1650.57",
-  "Aero.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXDocument(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxWritable" : "AXFullScreen, AXPosition, AXSections, AXMain, AXMinimized, AXSize",
-  "Aero.windowId_native" : 18969,
-  "Aero.macOS.version" : "Version 26.5.1 (Build 25F80)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.valvesoftware.steam.helper",
+  "HyprMac.App.nsApp.activationPolicy" : "accessory",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Users/bobko/Library/Application%20Support/Steam/Steam.AppBundle/Steam/Contents/Frameworks/Steam%20Helper.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Users/bobko/Library/Application%20Support/Steam/Steam.AppBundle/Steam/Contents/Frameworks/Steam%20Helper.app/Contents/MacOS/Steam%20Helper",
+  "HyprMac.App.pid" : 86598,
+  "HyprMac.App.version" : "1650.57",
+  "HyprMac.App.versionShort" : "31.0.1650.57",
+  "HyprMac.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXDocument(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxWritable" : "AXFullScreen, AXPosition, AXSections, AXMain, AXMinimized, AXSize",
+  "HyprMac.windowId_native" : 18969,
+  "HyprMac.macOS.version" : "Version 26.5.1 (Build 25F80)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "M"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "M"
 }

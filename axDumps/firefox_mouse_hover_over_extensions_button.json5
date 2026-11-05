@@ -26,16 +26,16 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=13054, title=nil, role=\"AXWebArea\", subrole=nil)",
-    "AXFocusedWindow" : "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta · nikitabobko/AeroSpace · Discussion #1115\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+    "AXFocusedWindow" : "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXFrame" : null,
     "AXFrontmost" : 1,
     "AXFunctionRowTopLevelElements" : [
 
     ],
-    "AXMainWindow" : "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta · nikitabobko/AeroSpace · Discussion #1115\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+    "AXMainWindow" : "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXMenuBar" : "<AXUIElement 0x60000193bbd0> {pid=1405}",
     "AXPosition" : null,
     "AXRole" : "AXApplication",
@@ -43,23 +43,23 @@
     "AXTitle" : "Firefox",
     "AXWindows" : [
       "AXUIElement(windowId_native=13196, title=\"Extensions\", role=\"AXWindow\", subrole=\"AXUnknown\")",
-      "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta · nikitabobko/AeroSpace · Discussion #1115\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
+      "AXUIElement(windowId_native=13054, title=\"The small float tips in firefox will be trated as a window in v0.17.0-Beta\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "org.mozilla.firefox",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Firefox.app/Contents/MacOS/firefox",
-  "Aero.App.version" : "13725.4.14",
-  "Aero.App.versionShort" : "137.0.2",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 13196,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "org.mozilla.firefox",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Firefox.app/Contents/MacOS/firefox",
+  "HyprMac.App.version" : "13725.4.14",
+  "HyprMac.App.versionShort" : "137.0.2",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 13196,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "AppBundle.MacosPopupWindowsContainer",
-  "Aero.windowLevel" : 101,
-  "Aero.workspace" : null
+  "HyprMac.treeNodeParent" : "AppBundle.MacosPopupWindowsContainer",
+  "HyprMac.windowLevel" : 101,
+  "HyprMac.workspace" : null
 }

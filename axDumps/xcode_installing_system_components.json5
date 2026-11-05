@@ -26,7 +26,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=372, title=\"Xcode\", role=\"AXWindow\", subrole=\"AXDialog\")",
     "AXFocusedWindow" : "AXUIElement(windowId_native=372, title=\"Xcode\", role=\"AXWindow\", subrole=\"AXDialog\")",
@@ -44,22 +44,22 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=372, title=\"Xcode\", role=\"AXWindow\", subrole=\"AXDialog\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.apple.dt.Xcode",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-  "Aero.App.version" : "23792",
-  "Aero.App.versionShort" : "16.4",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 372,
-  "Aero.AxUiElementWindowType" : "dialog",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.macOS.version" : "Version 15.5 (Build 24F74)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.apple.dt.Xcode",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+  "HyprMac.App.version" : "23792",
+  "HyprMac.App.versionShort" : "16.4",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 372,
+  "HyprMac.AxUiElementWindowType" : "dialog",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.macOS.version" : "Version 15.5 (Build 24F74)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.Workspace)",
-  "Aero.workspace" : "D"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.Workspace)",
+  "HyprMac.workspace" : "D"
 }
 

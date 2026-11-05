@@ -1,9 +1,9 @@
 import Foundation
 import AppKit
 
-public protocol AeroAny {}
+public protocol HyprMacAny {}
 
-extension AeroAny {
+extension HyprMacAny {
     @discardableResult
     @inlinable
     public func apply(_ block: (Self) -> Void) -> Self {
@@ -27,12 +27,12 @@ extension AeroAny {
     }
 }
 
-extension Int: AeroAny {}
-extension String: AeroAny {}
-extension Character: AeroAny {}
-extension Regex: AeroAny {}
-extension Array: AeroAny {}
-extension URL: AeroAny {}
-extension CGFloat: AeroAny {}
-extension AXUIElement: AeroAny {}
-extension CGPoint: AeroAny {}
+extension Int: HyprMacAny {}
+extension String: HyprMacAny {}
+extension Character: HyprMacAny {}
+extension Regex: HyprMacAny {}
+extension Array: HyprMacAny {}
+extension URL: HyprMacAny {}
+extension CGFloat: HyprMacAny {}
+extension AXUIElement: HyprMacAny {}
+extension CGPoint: HyprMacAny {}

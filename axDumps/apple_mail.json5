@@ -10,7 +10,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : {
     "AXEnabled" : 1,
@@ -21,7 +21,7 @@
     "AXTitle" : "Try Categories",
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXDocument" : null,
   "AXFocused" : 0,
@@ -36,7 +36,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXGrowArea" : null,
   "AXIdentifier" : "Mail.messageViewer.window.1",
@@ -50,7 +50,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -81,9 +81,9 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=5005, title=nil, role=\"AXTable\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -101,22 +101,22 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=5005, title=\"Inbox – REDACTED – Primary · 64 messages\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.apple.mail",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///System/Applications/Mail.app/Contents/MacOS/Mail",
-  "Aero.App.version" : "3826.600.51.1.1",
-  "Aero.App.versionShort" : "16.0",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 5005,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.macOS.version" : "Version 15.5 (Build 24F74)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.apple.mail",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///System/Applications/Mail.app/Contents/MacOS/Mail",
+  "HyprMac.App.version" : "3826.600.51.1.1",
+  "HyprMac.App.versionShort" : "16.0",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 5005,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.macOS.version" : "Version 15.5 (Build 24F74)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "M"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "M"
 }

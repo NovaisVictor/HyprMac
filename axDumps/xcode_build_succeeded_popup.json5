@@ -26,16 +26,16 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=18908, title=nil, role=\"AXTextField\", subrole=\"AXSearchField\")",
-    "AXFocusedWindow" : "AXUIElement(windowId_native=18908, title=\"AeroSpace — AeroSpace.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+    "AXFocusedWindow" : "AXUIElement(windowId_native=18908, title=\"HyprMac — HyprMac.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXFrame" : null,
     "AXFrontmost" : 1,
     "AXFunctionRowTopLevelElements" : [
 
     ],
-    "AXMainWindow" : "AXUIElement(windowId_native=18908, title=\"AeroSpace — AeroSpace.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
+    "AXMainWindow" : "AXUIElement(windowId_native=18908, title=\"HyprMac — HyprMac.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXMenuBar" : "<AXUIElement 0xca6f73d20> {pid=80825}",
     "AXPosition" : null,
     "AXRole" : "AXApplication",
@@ -43,30 +43,30 @@
     "AXTitle" : "Xcode",
     "AXWindows" : [
       "AXUIElement(windowId_native=18910, title=\"Build Succeeded\", role=\"AXWindow\", subrole=\"AXSystemDialog\")",
-      "AXUIElement(windowId_native=18908, title=\"AeroSpace — AeroSpace.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
+      "AXUIElement(windowId_native=18908, title=\"HyprMac — HyprMac.xcodeproj\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements(failure), get.AXFrame(attributeUnsupported), isWritable.AXFrame(failure), get.AXExtrasMenuBar(noValue), isWritable.AXExtrasMenuBar(failure), get.AXSize(attributeUnsupported), isWritable.AXSize(attributeUnsupported), get.AXPosition(attributeUnsupported), isWritable.AXPosition(attributeUnsupported)",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFrontmost"
   },
-  "Aero.App.appBundleId" : "com.apple.dt.Xcode",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/Xcode.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
-  "Aero.App.pid" : 80825,
-  "Aero.App.version" : "24943",
-  "Aero.App.versionShort" : "26.5",
-  "Aero.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXDocument(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxWritable" : "AXPosition, AXSections",
-  "Aero.windowId_native" : 18910,
-  "Aero.macOS.version" : "Version 26.5.1 (Build 25F80)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.apple.dt.Xcode",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/Xcode.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Xcode.app/Contents/MacOS/Xcode",
+  "HyprMac.App.pid" : 80825,
+  "HyprMac.App.version" : "24943",
+  "HyprMac.App.versionShort" : "26.5",
+  "HyprMac.AxFailed" : "isWritable.AXFrame(failure), get.AXGrowArea(failure), get.AXMinimizeButton(noValue), get.AXDocument(noValue), get.AXCloseButton(noValue), isWritable.AXActivationPoint(failure), get.AXFullScreenButton(noValue), get.AXProxy(noValue), get.AXDefaultButton(noValue), get.AXTitleUIElement(noValue), get.AXCancelButton(noValue), get.AXZoomButton(noValue), get.AXToolbarButton(noValue)",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxWritable" : "AXPosition, AXSections",
+  "HyprMac.windowId_native" : 18910,
+  "HyprMac.macOS.version" : "Version 26.5.1 (Build 25F80)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
-  "Aero.windowLevel" : 101,
-  "Aero.workspace" : null
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
+  "HyprMac.windowLevel" : 101,
+  "HyprMac.workspace" : null
 }

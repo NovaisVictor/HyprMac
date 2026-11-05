@@ -4,7 +4,7 @@ import SwiftUI
 @MainActor
 public func getMessageWindow(messageModel: MessageModel) -> some Scene {
     // Using SwiftUI.Window because another class in HyprMac is already called Window
-    SwiftUI.Window(messageModel.message?.title ?? aeroSpaceAppName, id: messageWindowId) {
+    SwiftUI.Window(messageModel.message?.title ?? hyprMacAppName, id: messageWindowId) {
         MessageView(model: messageModel)
             .onAppear {
                 // Set activation policy; otherwise, HyprMac windows won't be able to receive focus and accept keyboard input
@@ -23,7 +23,7 @@ public func getMessageWindow(messageModel: MessageModel) -> some Scene {
     //.windowLevel(.floating) //This might be the SwiftUI way of doing window level instead of the onAppear block above, but it's only available from #macos15
 }
 
-public let messageWindowId = "\(aeroSpaceAppName).messageView"
+public let messageWindowId = "\(hyprMacAppName).messageView"
 
 struct MessageView: View {
     @StateObject private var model: MessageModel
@@ -121,7 +121,7 @@ public struct Message: Hashable, Equatable {
 
     init(
         type: MessageType = .config,
-        title: String = aeroSpaceAppName,
+        title: String = hyprMacAppName,
         description: String = "HyprMac Config Diagnostics",
         body: String,
         containsWarnings: Bool,

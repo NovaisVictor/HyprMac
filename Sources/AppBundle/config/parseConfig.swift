@@ -187,7 +187,7 @@ func parseDeprecatedAfterLoginCommand(_ raw: OrderedJson, _ backtrace: ConfigBac
     if let array = raw.asArrayOrNil, array.count == 0 {
         return .success([])
     }
-    let msg = "after-login-command is deprecated since AeroSpace 0.19.0. https://github.com/nikitabobko/AeroSpace/issues/1482"
+    let msg = "after-login-command is deprecated. Use after-startup-command instead"
     return .failure(.init(backtrace, msg))
 }
 
@@ -331,7 +331,7 @@ struct ParseConfigResult {
 }
 
 func parseIndentForNestedContainersWithTheSameOrientation(_ _: OrderedJson, _ backtrace: ConfigBacktrace) -> ResOrConfigParseDiagnostic<Void> {
-    let msg = "Deprecated. Please drop it from the config. See https://github.com/nikitabobko/AeroSpace/issues/96"
+    let msg = "Deprecated. Please drop it from the config"
     return .failure(.init(backtrace, msg))
 }
 

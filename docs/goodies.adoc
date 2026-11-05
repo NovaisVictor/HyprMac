@@ -49,14 +49,6 @@ after-startup-command = [
 ]
 ----
 
-[#raycast-extension]
-== AeroSpace Raycast extension
-
-There is a third party Raycast extension for AeroSpace, which HyprMac is based on. https://www.raycast.com/limonkufu/aerospace
-It calls the `aerospace` CLI, so it needs to be adapted to call `hyprmac`.
-
-If you struggle remembering shortcuts, it's useful to search for commands until they become muscle memory.
-
 [#disable-open-animations]
 == Disable windows opening animations
 
@@ -82,10 +74,8 @@ hyprmac eval 'list-workspaces --monitor mouse --visible | workspace --stdin next
 Use the software of your choice to assign trackpad gestures to the respective commands.
 Here are a few third party options in alphabetical order:
 
-* https://github.com/acsandmann/aerospace-swipe (made for AeroSpace, calls the `aerospace` CLI)
 * link:https://folivora.ai/[BetterTouchTool] can assign arbitrary commands to trackpad gestures.
-Beware that you might need to specify full path to hyprmac executable https://community.folivora.ai/t/how-to-execute-terminal-command-to-switch-workspaces-with-aerospace/35914
-* https://github.com/MediosZ/SwipeAeroSpace (made for AeroSpace, calls the `aerospace` CLI)
+Beware that you might need to specify full path to hyprmac executable
 
 CAUTION: Make sure that you trust project authors before running the distributed binaries.
 Alternatively, inspect the source code, and build it yourself.
@@ -147,8 +137,8 @@ fi
 [#show-hyprmac-workspaces-in-simple-bar]
 == Show HyprMac workspaces in simple-bar
 
-link:https://github.com/Jean-Tinland/simple-bar[simple-bar] can be used to display AeroSpace workspaces.
-Its AeroSpace integration calls the `aerospace` CLI, so it needs to be adapted to call `hyprmac`.
+link:https://github.com/Jean-Tinland/simple-bar[simple-bar] can display tiling window manager workspaces.
+Its integration calls the window manager CLI, so it needs to be adapted to call `hyprmac`.
 
 In order to sync simple-bar with HyprMac, add these lines to your HyprMac config file:
 

@@ -92,33 +92,33 @@ private func dumpWindowDebugInfo(_ window: Window, _ nativeWindowId: UInt32, _ c
 
     let windowLevel = try await window.getWindowLevel(cm)
     let windowLevelJson = windowLevel?.toJson() ?? .null
-    result["Aero.windowLevel"] = windowLevelJson
-    result["Aero.windowId_opaque"] = .string(window.windowId.description)
-    result["Aero.windowId_native"] = .int(nativeWindowId)
-    result["Aero.workspace"] = .stringOrNull(window.nodeWorkspace?.name)
-    result["Aero.treeNodeParent"] = .string(String(describing: window.parent))
-    result["Aero.macOS.version"] = .string(ProcessInfo().operatingSystemVersionString) // because built-in apps might behave differently depending on the OS version
-    result["Aero.App.appBundleId"] = .stringOrNull(window.app.rawAppBundleId)
-    result["Aero.App.pid"] = .int(Int(window.app.pid))
-    result["Aero.App.versionShort"] = .stringOrNull(appInfoDic["CFBundleShortVersionString"] as? String)
-    result["Aero.App.version"] = .stringOrNull(appInfoDic["CFBundleVersion"] as? String)
-    result["Aero.App.nsApp.activationPolicy"] = .string(window.macApp.nsApp.activationPolicy.prettyDescription)
-    result["Aero.App.nsApp.execPath"] = .stringOrNull(window.macApp.nsApp.executableURL?.description)
-    result["Aero.App.nsApp.appBundlePath"] = .stringOrNull(window.macApp.nsApp.bundleURL?.description)
-    result["Aero.AXApp"] = .dict(try await window.macApp.dumpAppAxInfo(cm))
+    result["HyprMac.windowLevel"] = windowLevelJson
+    result["HyprMac.windowId_opaque"] = .string(window.windowId.description)
+    result["HyprMac.windowId_native"] = .int(nativeWindowId)
+    result["HyprMac.workspace"] = .stringOrNull(window.nodeWorkspace?.name)
+    result["HyprMac.treeNodeParent"] = .string(String(describing: window.parent))
+    result["HyprMac.macOS.version"] = .string(ProcessInfo().operatingSystemVersionString) // because built-in apps might behave differently depending on the OS version
+    result["HyprMac.App.appBundleId"] = .stringOrNull(window.app.rawAppBundleId)
+    result["HyprMac.App.pid"] = .int(Int(window.app.pid))
+    result["HyprMac.App.versionShort"] = .stringOrNull(appInfoDic["CFBundleShortVersionString"] as? String)
+    result["HyprMac.App.version"] = .stringOrNull(appInfoDic["CFBundleVersion"] as? String)
+    result["HyprMac.App.nsApp.activationPolicy"] = .string(window.macApp.nsApp.activationPolicy.prettyDescription)
+    result["HyprMac.App.nsApp.execPath"] = .stringOrNull(window.macApp.nsApp.executableURL?.description)
+    result["HyprMac.App.nsApp.appBundlePath"] = .stringOrNull(window.macApp.nsApp.bundleURL?.description)
+    result["HyprMac.AXApp"] = .dict(try await window.macApp.dumpAppAxInfo(cm))
 
     let isDialog = try await window.isDialogHeuristic(windowLevel, cm)
     let isWindow = try await window.isWindowHeuristic(windowLevel, cm)
-    result["Aero.AxUiElementWindowType"] = .string(AxUiElementWindowType.new(isWindow: isWindow, isDialog: { isDialog }).rawValue)
-    result["Aero.AxUiElementWindowType_isDialogHeuristic"] = .bool(isDialog)
+    result["HyprMac.AxUiElementWindowType"] = .string(AxUiElementWindowType.new(isWindow: isWindow, isDialog: { isDialog }).rawValue)
+    result["HyprMac.AxUiElementWindowType_isDialogHeuristic"] = .bool(isDialog)
 
     var matchingCallbacks: [Json] = []
     for callback in config.onWindowDetected where await callback.matches(window) {
         matchingCallbacks.append(callback.debugJson)
     }
-    result["Aero.on-window-detected"] = .array(matchingCallbacks)
+    result["HyprMac.on-window-detected"] = .array(matchingCallbacks)
 
-    return JSONEncoder.aeroSpaceDefault.encodeToString(result).prettyDescription
+    return JSONEncoder.hyprMacDefault.encodeToString(result).prettyDescription
         .prefixLines(with: "\(window.app.rawAppBundleId ?? "nil-bundle-id").\(window.windowId) ||| ")
 }
 

@@ -80,7 +80,7 @@ func parseListWindowsCmdArgs(_ args: StrArrSlice) -> ParsedCmd<ListWindowsCmdArg
 
 func formatParser<Root>(
     _ keyPath: SendableWritableKeyPath<Root, [InterToken<InterVar>]>,
-    for kind: AeroObjKind,
+    for kind: HyprMacObjKind,
 ) -> SubArgParser<Root, [InterToken<InterVar>]> {
     return ArgParser(keyPath) { input in
         if let arg = input.nonFlagArgOrNil() {
@@ -131,7 +131,7 @@ public enum FormatVar: RawRepresentable, Equatable, CaseIterable, Sendable {
     case monitor(MonitorFormatVar)
 
     // periphery:ignore
-    private var kind: AeroObjKind {
+    private var kind: HyprMacObjKind {
         switch self {
             case .app: .app
             case .monitor: .monitor
@@ -141,7 +141,7 @@ public enum FormatVar: RawRepresentable, Equatable, CaseIterable, Sendable {
     }
 
     public static var allCases: [FormatVar] {
-        AeroObjKind.allCases.flatMap {
+        HyprMacObjKind.allCases.flatMap {
             switch $0 {
                 case .app: AppFormatVar.allCases.map(FormatVar.app)
                 case .monitor: MonitorFormatVar.allCases.map(FormatVar.monitor)
@@ -152,7 +152,7 @@ public enum FormatVar: RawRepresentable, Equatable, CaseIterable, Sendable {
     }
 
     public init?(rawValue: String) {
-        let value = AeroObjKind.allCases.map { kind in
+        let value = HyprMacObjKind.allCases.map { kind in
             switch kind {
                 case .app: AppFormatVar(rawValue: rawValue).map(FormatVar.app)
                 case .monitor: MonitorFormatVar(rawValue: rawValue).map(FormatVar.monitor)
@@ -264,15 +264,15 @@ public enum InterVar: RawRepresentable, Equatable, CaseIterable, Sendable {
     }
 }
 
-public enum AeroObjKind: CaseIterable, Sendable {
+public enum HyprMacObjKind: CaseIterable, Sendable {
     case window, workspace, app, monitor
 }
 
-public func getAvailableInterVars(for kind: AeroObjKind) -> [String] {
+public func getAvailableInterVars(for kind: HyprMacObjKind) -> [String] {
     _getAvailableInterVars(for: kind) + PlainInterVar.allCases.map(\.rawValue)
 }
 
-private func _getAvailableInterVars(for kind: AeroObjKind) -> [String] {
+private func _getAvailableInterVars(for kind: HyprMacObjKind) -> [String] {
     switch kind {
         case .app: FormatVar.AppFormatVar.allCases.map(\.rawValue)
         case .monitor: FormatVar.MonitorFormatVar.allCases.map(\.rawValue)

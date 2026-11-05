@@ -27,7 +27,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : null,
     "AXFocusedWindow" : "AXUIElement(windowId_native=913, title=\"\", role=\"AXWindow\", subrole=\"AXUnknown\")",
@@ -47,22 +47,22 @@
       "AXUIElement(windowId_native=913, title=\"\", role=\"AXWindow\", subrole=\"AXUnknown\")",
       "AXUIElement(windowId_native=441, title=\"Meet – hjq-dnoz-obo - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.google.Chrome",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
-  "Aero.App.version" : "7151.104",
-  "Aero.App.versionShort" : "137.0.7151.104",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.windowId_native" : 920,
-  "Aero.macOS.version" : "Version 15.5 (Build 24F74)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.google.Chrome",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
+  "HyprMac.App.version" : "7151.104",
+  "HyprMac.App.versionShort" : "137.0.7151.104",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.windowId_native" : 920,
+  "HyprMac.macOS.version" : "Version 15.5 (Build 24F74)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
-  "Aero.windowLevel" : 25,
-  "Aero.workspace" : null
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.MacosPopupWindowsContainer)",
+  "HyprMac.windowLevel" : 25,
+  "HyprMac.workspace" : null
 }

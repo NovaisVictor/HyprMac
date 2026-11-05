@@ -28,7 +28,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : null,
     "AXFocusedWindow" : "AXUIElement(windowId_native=14413, title=\"Picture-in-picture\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -47,24 +47,24 @@
       "AXUIElement(windowId_native=14413, title=\"Picture-in-picture\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
       "AXUIElement(windowId_native=14400, title=\"John Cena Prank Call - YouTube – Video playing in picture-in-picture mode - Google Chrome\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.google.Chrome",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
-  "Aero.App.version" : "7049.116",
-  "Aero.App.versionShort" : "135.0.7049.116",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 14413,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxUiElementWindowType" : "popup",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.google.Chrome",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Google%20Chrome.app/Contents/MacOS/Google%20Chrome",
+  "HyprMac.App.version" : "7049.116",
+  "HyprMac.App.versionShort" : "135.0.7049.116",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 14413,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxUiElementWindowType" : "popup",
+  "HyprMac.on-window-detected" : [
     {
       "commands" : "move-node-to-workspace F",
       "matcher" : "appId=\"com.google.Chrome\""
     }
   ],
-  "Aero.treeNodeParent" : "AppBundle.Workspace",
-  "Aero.windowLevel" : "alwaysOnTopWindow",
-  "Aero.workspace" : "F"
+  "HyprMac.treeNodeParent" : "AppBundle.Workspace",
+  "HyprMac.windowLevel" : "alwaysOnTopWindow",
+  "HyprMac.workspace" : "F"
 }

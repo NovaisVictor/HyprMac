@@ -215,7 +215,7 @@ struct ConfigCommandTest {
                 "focus-pulse-ms": .scalar(.int(0)),
             ]),
         ])
-        let expectedJson = JSONEncoder.aeroSpaceDefault.encodeToString(expectedMap)
+        let expectedJson = JSONEncoder.hyprMacDefault.encodeToString(expectedMap)
 
         let result = await parseCommand("config --get . --json").cmdOrDie.run(.defaultEnv, .emptyStdin)
         assertEquals(result.exitCode.rawValue, 0)

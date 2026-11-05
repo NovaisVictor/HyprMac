@@ -9,8 +9,8 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxFailed" : "get.AXTitle",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : "file:///Users/bobko/REDACTED/REDACTED.mkv",
@@ -29,8 +29,8 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxFailed" : "get.AXTitle",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -54,10 +54,10 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxFailed" : "get.AXTitle",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxFailed" : "get.AXTitle",
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : "<AXUIElement 0x97809e580> {pid=86771}",
     "AXFocusedUIElement" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXFocusedWindow" : "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -75,28 +75,28 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=2942, title=\"REDACTED\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements, get.AXFrame, isWritable.AXFrame, isWritable.AXExtrasMenuBar, get.AXSize, isWritable.AXSize, get.AXPosition, isWritable.AXPosition",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements, get.AXFrame, isWritable.AXFrame, isWritable.AXExtrasMenuBar, get.AXSize, isWritable.AXSize, get.AXPosition, isWritable.AXPosition",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFrontmost"
   },
-  "Aero.App.appBundleId" : "org.videolan.vlc",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/VLC.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/VLC.app/Contents/MacOS/VLC",
-  "Aero.App.pid" : 86771,
-  "Aero.App.version" : "3.0.21",
-  "Aero.App.versionShort" : "3.0.21",
-  "Aero.AxFailed" : "isWritable.AXFrame, get.AXGrowArea, isWritable.AXActivationPoint, get.AXFullScreenButton, get.AXDefaultButton, get.AXCancelButton, get.AXToolbarButton",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "dialog",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxWritable" : "AXPosition, AXSections, AXMain, AXMinimized, AXSize",
-  "Aero.windowId_native" : 2942,
-  "Aero.macOS.version" : "Version 26.1 (Build 25B78)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "org.videolan.vlc",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/VLC.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/VLC.app/Contents/MacOS/VLC",
+  "HyprMac.App.pid" : 86771,
+  "HyprMac.App.version" : "3.0.21",
+  "HyprMac.App.versionShort" : "3.0.21",
+  "HyprMac.AxFailed" : "isWritable.AXFrame, get.AXGrowArea, isWritable.AXActivationPoint, get.AXFullScreenButton, get.AXDefaultButton, get.AXCancelButton, get.AXToolbarButton",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "dialog",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxWritable" : "AXPosition, AXSections, AXMain, AXMinimized, AXSize",
+  "HyprMac.windowId_native" : 2942,
+  "HyprMac.macOS.version" : "Version 26.1 (Build 25B78)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.Workspace)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "F"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.Workspace)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "F"
 }

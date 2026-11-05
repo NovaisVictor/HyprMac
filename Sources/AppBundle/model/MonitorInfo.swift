@@ -15,7 +15,7 @@ extension MonitorInfoImpl: MonitorInfo {
 }
 
 /// Use it instead of NSScreen because it can be mocked in tests
-protocol MonitorInfo: AeroAny {
+protocol MonitorInfo: HyprMacAny {
     /// The index in NSScreen.screens array. 1-based index
     var monitorAppKitNsScreenScreensId: Int { get }
     var name: String { get }

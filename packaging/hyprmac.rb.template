@@ -4,7 +4,7 @@ cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by script/publi
 
   url "https://github.com/NovaisVictor/HyprMac/releases/download/v#{version}/HyprMac-#{version}.zip"
   name "HyprMac"
-  desc "AeroSpace-based tiling window manager with Hyprland-like features"
+  desc "i3-like tiling window manager with Hyprland-like features"
   homepage "https://github.com/NovaisVictor/HyprMac"
 
   depends_on macos: :ventura # macOS 13, Package.swift: platforms: [.macOS(.v13)]

@@ -30,8 +30,8 @@ protocol BorderOverlay: AnyObject {
 /// - inactive windows when `inactive-color = ''`.
 /// HyprMac's own windows are never managed (MacApp skips its own pid), so they never get a border
 @MainActor
-func borderRoles(focus: Window?, showsInactive: Bool, isAeroSpaceEnabled: Bool) -> [OpaqueWindowId: BorderRole] {
-    if !isAeroSpaceEnabled { return [:] }
+func borderRoles(focus: Window?, showsInactive: Bool, isHyprMacEnabled: Bool) -> [OpaqueWindowId: BorderRole] {
+    if !isHyprMacEnabled { return [:] }
     var result: [OpaqueWindowId: BorderRole] = [:]
     for workspace in Workspace.all where workspace.isVisible {
         let fullscreenWindow = workspace.rootTilingContainer.mostRecentWindowRecursive?.takeIf(\.isFullscreen)
@@ -167,7 +167,7 @@ final class BordersController {
                 place(&entry, frame: info.frame, level: info.level)
                 entries[windowId] = entry
             case .reordered:
-                // The window was raised or lowered, e.g. by its app right after AeroSpace focused it, and may now cover
+                // The window was raised or lowered, e.g. by its app right after HyprMac focused it, and may now cover
                 // a border that must stay above it. Ordering the border reorders the window too, so the border is
                 // ordered only when it isn't next to its window already: otherwise the two would chase each other
                 guard let border = UInt32(exactly: entry.overlay.windowNumber), let target = orderTarget(nativeWindowId),
@@ -200,7 +200,7 @@ final class BordersController {
         entries[windowId] = entry
     }
 
-    /// An app often raises its window right after AeroSpace focused it, and the window then covers a border that must
+    /// An app often raises its window right after HyprMac focused it, and the window then covers a border that must
     /// stay above it. The WindowServer doesn't always report that reorder, so the order is checked again a bit later
     func verifyOrder() {
         for entry in entries.values where entry.role != nil {

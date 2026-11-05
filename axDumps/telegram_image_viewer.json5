@@ -26,7 +26,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=4259, title=\"Media viewer\", role=\"AXWindow\", subrole=\"AXDialog\")",
     "AXFocusedWindow" : "AXUIElement(windowId_native=4259, title=\"Media viewer\", role=\"AXWindow\", subrole=\"AXDialog\")",
@@ -45,22 +45,22 @@
       "AXUIElement(windowId_native=4259, title=\"Media viewer\", role=\"AXWindow\", subrole=\"AXDialog\")",
       "AXUIElement(windowId_native=4232, title=\"‎⁨redacted⁩ – (57469)\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.tdesktop.Telegram",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.execPath" : "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
-  "Aero.App.version" : "5.15.4",
-  "Aero.App.versionShort" : "5.15.4",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.windowId_native" : 4259,
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.AxUiElementWindowType" : "dialog",
-  "Aero.macOS.version" : "Version 15.5 (Build 24F74)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.tdesktop.Telegram",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/Telegram.app/Contents/MacOS/Telegram",
+  "HyprMac.App.version" : "5.15.4",
+  "HyprMac.App.versionShort" : "5.15.4",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.windowId_native" : 4259,
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.AxUiElementWindowType" : "dialog",
+  "HyprMac.macOS.version" : "Version 15.5 (Build 24F74)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.Workspace)",
-  "Aero.windowLevel" : 101,
-  "Aero.workspace" : "T"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.Workspace)",
+  "HyprMac.windowLevel" : 101,
+  "HyprMac.workspace" : "T"
 }

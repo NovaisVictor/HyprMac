@@ -42,7 +42,7 @@ struct OnWindowTitleChangedConfigTest {
         assertEquals(callback?.matcher.needsWindowTitle, true)
     }
 
-    @Test func testDuringAeroSpaceStartupIsRejected() {
+    @Test func testDuringHyprMacStartupIsRejected() {
         let result = parseConfig(
             """
             [[on-window-title-changed]]
@@ -56,7 +56,7 @@ struct OnWindowTitleChangedConfigTest {
         assertEquals(result.config.onWindowTitleChanged, [])
     }
 
-    @Test func testDuringAeroSpaceStartupIsStillAllowedInOnWindowDetected() {
+    @Test func testDuringHyprMacStartupIsStillAllowedInOnWindowDetected() {
         let result = parseConfig(
             """
             [[on-window-detected]]

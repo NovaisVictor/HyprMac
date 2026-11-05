@@ -153,9 +153,9 @@ struct BordersTest {
         let tiling1 = TestWindow.new(id: 1, parent: workspace.rootTilingContainer)
         let tiling2 = TestWindow.new(id: 2, parent: workspace.rootTilingContainer)
         let floating = TestWindow.new(id: 3, parent: workspace.floatingWindowsContainer)
-        assertEquals(borderRoles(focus: tiling2, showsInactive: true, isAeroSpaceEnabled: true), [1: .inactive, 2: .active, 3: .inactive])
-        assertEquals(borderRoles(focus: floating, showsInactive: false, isAeroSpaceEnabled: true), [3: .active])
-        assertEquals(borderRoles(focus: tiling1, showsInactive: true, isAeroSpaceEnabled: false), [:])
+        assertEquals(borderRoles(focus: tiling2, showsInactive: true, isHyprMacEnabled: true), [1: .inactive, 2: .active, 3: .inactive])
+        assertEquals(borderRoles(focus: floating, showsInactive: false, isHyprMacEnabled: true), [3: .active])
+        assertEquals(borderRoles(focus: tiling1, showsInactive: true, isHyprMacEnabled: false), [:])
     }
 
     @Test func testUnconventionalWindowsHaveNoBorder() {
@@ -168,7 +168,7 @@ struct BordersTest {
         TestWindow.new(id: 5, parent: macosMinimizedWindowsContainer)
         let invisibleTab = TestWindow.new(id: 6, parent: workspace.rootTilingContainer)
         invisibleTab.lifeStatus = .invisible
-        assertEquals(borderRoles(focus: nil, showsInactive: true, isAeroSpaceEnabled: true), [1: .inactive])
+        assertEquals(borderRoles(focus: nil, showsInactive: true, isHyprMacEnabled: true), [1: .inactive])
     }
 
     @Test func testWindowsOfInvisibleWorkspacesHaveNoBorder() {
@@ -177,7 +177,7 @@ struct BordersTest {
         let visible = Workspace.get(byName: name)
         check(visible.focusWorkspace())
         TestWindow.new(id: 2, parent: visible.rootTilingContainer)
-        assertEquals(borderRoles(focus: nil, showsInactive: true, isAeroSpaceEnabled: true), [2: .inactive])
+        assertEquals(borderRoles(focus: nil, showsInactive: true, isHyprMacEnabled: true), [2: .inactive])
     }
 
     @Test func testFullscreenWindowCoversTheTilingBorders() {
@@ -188,7 +188,7 @@ struct BordersTest {
         TestWindow.new(id: 3, parent: workspace.floatingWindowsContainer)
         fullscreen.isFullscreen = true
         fullscreen.markAsMostRecentChild()
-        assertEquals(borderRoles(focus: fullscreen, showsInactive: true, isAeroSpaceEnabled: true), [2: .active, 3: .inactive])
+        assertEquals(borderRoles(focus: fullscreen, showsInactive: true, isHyprMacEnabled: true), [2: .active, 3: .inactive])
     }
 
     // MARK: the controller

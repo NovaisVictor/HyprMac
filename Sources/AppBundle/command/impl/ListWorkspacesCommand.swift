@@ -19,7 +19,7 @@ struct ListWorkspacesCommand: Command {
             result = result.filter { $0.isEffectivelyEmpty == empty }
         }
 
-        lazy var list = result.map() { AeroObj.workspace($0) }
+        lazy var list = result.map() { HyprMacObj.workspace($0) }
         return switch true {
             case args.outputOnlyCount:
                 .succ(io.out("\(result.count)"))

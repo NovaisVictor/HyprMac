@@ -1,7 +1,7 @@
 import AppKit
 import Common
 
-open class TreeNode: Equatable, AeroAny {
+open class TreeNode: Equatable, HyprMacAny {
     private var _children: [TreeNode] = []
     var children: [TreeNode] { _children }
     fileprivate final weak var _parent: NonLeafTreeNodeObject? = nil
@@ -19,7 +19,7 @@ open class TreeNode: Equatable, AeroAny {
     // - focus-follows-mouse
     var lastAppliedLayoutPhysicalRect: Rect? = nil // with real inner gaps
     final var unboundStacktrace: String? = nil
-    var isBound: Bool { parent != nil } // todo drop, once https://github.com/nikitabobko/AeroSpace/issues/1215 is fixed
+    var isBound: Bool { parent != nil } // todo drop, once dead nodes are no longer reachable from the tree
 
     @MainActor
     init(parent: NonLeafTreeNodeObject, adaptiveWeight: CGFloat, index: Int) {
@@ -108,7 +108,7 @@ open class TreeNode: Equatable, AeroAny {
         unboundStacktrace = nil
         // todo consider disabling automatic mru propogation
         // 1. "floating windows" in FocusCommand break the MRU because of that :(
-        // 2. Misbehaved apps that abuse real window as popups https://github.com/nikitabobko/AeroSpace/issues/106 (the
+        // 2. Misbehaved apps that abuse real window as popups (the
         //    last appeared window, is not necessarily the one that has the focus)
         if isMostRecent {
             markAsMostRecentChild()

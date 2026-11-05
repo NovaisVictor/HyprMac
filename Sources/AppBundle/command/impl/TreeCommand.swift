@@ -21,7 +21,7 @@ struct TreeCommand: Command {
             return .fail(io.err(error.localizedDescription))
         }
         if args.json {
-            return switch JSONEncoder.aeroSpaceDefault.encodeToString(dumps) {
+            return switch JSONEncoder.hyprMacDefault.encodeToString(dumps) {
                 case let json?: .succ(io.out(json))
                 case nil: .fail(io.err("Can't encode the tree to JSON"))
             }

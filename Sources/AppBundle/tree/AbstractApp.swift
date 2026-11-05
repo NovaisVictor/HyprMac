@@ -1,6 +1,6 @@
 import Common
 
-protocol AbstractApp: AnyObject, Hashable, AeroAny {
+protocol AbstractApp: AnyObject, Hashable, HyprMacAny {
     var pid: Int32 { get }
     var rawAppBundleId: String? { get }
 

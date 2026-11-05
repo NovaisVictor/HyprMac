@@ -9,7 +9,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription, AXEdited"
   },
   "AXDefaultButton" : null,
   "AXDocument" : null,
@@ -27,7 +27,7 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXHelp, AXPosition, AXRoleDescription"
   },
   "AXMinimized" : 0,
   "AXModal" : 0,
@@ -51,9 +51,9 @@
     "AXTitle" : null,
     "AXTopLevelUIElement" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
     "AXWindow" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
-    "Aero.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
+    "HyprMac.AxIgnored" : "AXFrame, AXSize, AXFocused, AXChildren, AXHelp, AXPosition, AXRoleDescription"
   },
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=38734, title=nil, role=\"AXUnknown\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
@@ -72,25 +72,25 @@
       "AXUIElement(windowId_native=38734, title=\"NoMachine - ubuntu20, Ubuntu 22.04.5 LTS\", role=\"AXWindow\", subrole=\"AXStandardWindow\")",
       "AXUIElement(windowId_native=38736, title=\"\", role=\"AXWindow\", subrole=\"AXStandardWindow\")"
     ],
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden"
   },
-  "Aero.App.appBundleId" : "com.nomachine.nxdock",
-  "Aero.App.nsApp.activationPolicy" : "accessory",
-  "Aero.App.nsApp.execPath" : "file:///Applications/NoMachine.app/Contents/MacOS/nxplayer",
-  "Aero.App.version" : "8.17.2",
-  "Aero.App.versionShort" : "8.17.2",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "dialog",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : true,
-  "Aero.windowId_native" : 38734,
-  "Aero.macOS.version" : "Version 15.5 (Build 24F74)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "com.nomachine.nxdock",
+  "HyprMac.App.nsApp.activationPolicy" : "accessory",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/NoMachine.app/Contents/MacOS/nxplayer",
+  "HyprMac.App.version" : "8.17.2",
+  "HyprMac.App.versionShort" : "8.17.2",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "dialog",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : true,
+  "HyprMac.windowId_native" : 38734,
+  "HyprMac.macOS.version" : "Version 15.5 (Build 24F74)",
+  "HyprMac.on-window-detected" : [
     {
       "commands" : "layout floating; move-node-to-workspace V",
       "matcher" : "appId=\"com.nomachine.nxdock\""
     }
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.Workspace)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "V"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.Workspace)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "V"
 }

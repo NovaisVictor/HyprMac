@@ -29,7 +29,7 @@
   "AXTitleUIElement" : null,
   "AXToolbarButton" : null,
   "AXZoomButton" : null,
-  "Aero.AXApp" : {
+  "HyprMac.AXApp" : {
     "AXExtrasMenuBar" : null,
     "AXFocusedUIElement" : "AXUIElement(windowId_native=4799, title=\"Change Log\", role=\"AXGroup\", subrole=nil)",
     "AXFocusedWindow" : "AXUIElement(windowId_native=4799, title=\"Change Log - qutebrowser\", role=\"AXWindow\", subrole=\"AXDialog\")",
@@ -47,28 +47,28 @@
     "AXWindows" : [
       "AXUIElement(windowId_native=4799, title=\"Change Log - qutebrowser\", role=\"AXWindow\", subrole=\"AXDialog\")"
     ],
-    "Aero.AxFailed" : "isWritable.AXFunctionRowTopLevelElements, get.AXFrame, isWritable.AXFrame, get.AXExtrasMenuBar, isWritable.AXExtrasMenuBar, get.AXMainWindow, get.AXSize, isWritable.AXSize, get.AXPosition, isWritable.AXPosition",
-    "Aero.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
-    "Aero.AxWritable" : "AXFrontmost"
+    "HyprMac.AxFailed" : "isWritable.AXFunctionRowTopLevelElements, get.AXFrame, isWritable.AXFrame, get.AXExtrasMenuBar, isWritable.AXExtrasMenuBar, get.AXMainWindow, get.AXSize, isWritable.AXSize, get.AXPosition, isWritable.AXPosition",
+    "HyprMac.AxIgnored" : "AXChildren, AXChildrenInNavigationOrder, AXEnhancedUserInterface, AXPreferredLanguage, AXRoleDescription, AXHidden",
+    "HyprMac.AxWritable" : "AXFrontmost"
   },
-  "Aero.App.appBundleId" : "org.qutebrowser.qutebrowser",
-  "Aero.App.nsApp.activationPolicy" : "regular",
-  "Aero.App.nsApp.appBundlePath" : "file:///Applications/qutebrowser.app/",
-  "Aero.App.nsApp.execPath" : "file:///Applications/qutebrowser.app/Contents/MacOS/qutebrowser",
-  "Aero.App.pid" : 96739,
-  "Aero.App.version" : "3.6.1",
-  "Aero.App.versionShort" : "3.6.1",
-  "Aero.AxFailed" : "isWritable.AXFrame, get.AXGrowArea, get.AXMinimizeButton, get.AXDocument, get.AXCloseButton, isWritable.AXActivationPoint, get.AXFullScreenButton, get.AXProxy, get.AXDefaultButton, get.AXTitleUIElement, get.AXCancelButton, get.AXZoomButton, get.AXToolbarButton",
-  "Aero.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
-  "Aero.AxUiElementWindowType" : "window",
-  "Aero.AxUiElementWindowType_isDialogHeuristic" : false,
-  "Aero.AxWritable" : "AXPosition, AXSections, AXMinimized, AXSize",
-  "Aero.windowId_native" : 4799,
-  "Aero.macOS.version" : "Version 26.1 (Build 25B78)",
-  "Aero.on-window-detected" : [
+  "HyprMac.App.appBundleId" : "org.qutebrowser.qutebrowser",
+  "HyprMac.App.nsApp.activationPolicy" : "regular",
+  "HyprMac.App.nsApp.appBundlePath" : "file:///Applications/qutebrowser.app/",
+  "HyprMac.App.nsApp.execPath" : "file:///Applications/qutebrowser.app/Contents/MacOS/qutebrowser",
+  "HyprMac.App.pid" : 96739,
+  "HyprMac.App.version" : "3.6.1",
+  "HyprMac.App.versionShort" : "3.6.1",
+  "HyprMac.AxFailed" : "isWritable.AXFrame, get.AXGrowArea, get.AXMinimizeButton, get.AXDocument, get.AXCloseButton, isWritable.AXActivationPoint, get.AXFullScreenButton, get.AXProxy, get.AXDefaultButton, get.AXTitleUIElement, get.AXCancelButton, get.AXZoomButton, get.AXToolbarButton",
+  "HyprMac.AxIgnored" : "AXChildrenInNavigationOrder, AXChildren, AXRoleDescription",
+  "HyprMac.AxUiElementWindowType" : "window",
+  "HyprMac.AxUiElementWindowType_isDialogHeuristic" : false,
+  "HyprMac.AxWritable" : "AXPosition, AXSections, AXMinimized, AXSize",
+  "HyprMac.windowId_native" : 4799,
+  "HyprMac.macOS.version" : "Version 26.1 (Build 25B78)",
+  "HyprMac.on-window-detected" : [
 
   ],
-  "Aero.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
-  "Aero.windowLevel" : "normalWindow",
-  "Aero.workspace" : "M"
+  "HyprMac.treeNodeParent" : "Optional(AppBundle.TilingContainer)",
+  "HyprMac.windowLevel" : "normalWindow",
+  "HyprMac.workspace" : "M"
 }

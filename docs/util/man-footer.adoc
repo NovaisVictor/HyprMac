@@ -12,9 +12,8 @@ Bugs can be reported to https://github.com/NovaisVictor/HyprMac/issues
 Copyright (C) 2023 Nikita Bobko +
 Copyright (C) 2026 Victor Novais +
 Free use of this software is granted under the terms of the MIT License +
-HyprMac is based on AeroSpace by Nikita Bobko: https://github.com/nikitabobko/AeroSpace +
 You can find the full text of HyprMac license and its dependencies in the 'legal' directory of the distributed zip archive.
 
 == AUTHOR
 
-Victor Novais. Based on AeroSpace by Nikita Bobko and contributors
+Victor Novais

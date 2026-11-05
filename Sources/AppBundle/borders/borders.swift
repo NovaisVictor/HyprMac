@@ -61,7 +61,7 @@ func refreshBorders() {
     let roles = borderRoles(
         focus: globalFocus.windowOrNil,
         showsInactive: bordersController.config.inactiveColor != nil,
-        isAeroSpaceEnabled: TrayMenuModel.shared.isEnabled,
+        isHyprMacEnabled: TrayMenuModel.shared.isEnabled,
     )
     bordersController.reconcile(roles, nativeWindowIds: nativeWindowIds)
 }

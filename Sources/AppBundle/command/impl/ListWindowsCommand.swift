@@ -51,7 +51,7 @@ struct ListWindowsCommand: Command {
             _list = _list.filter { $0.window.isBound }
             _list = _list.sortedBy([{ $0.window.app.name ?? "" }, { $0.title ?? "" }])
 
-            let list = _list.map { AeroObj.window($0) }
+            let list = _list.map { HyprMacObj.window($0) }
             if args.json {
                 return switch list.formatToJson(args.format, ignoreRightPaddingVar: args._format.isEmpty) {
                     case .success(let json): .succ(io.out(json))

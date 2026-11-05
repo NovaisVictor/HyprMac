@@ -31,7 +31,7 @@ struct LegacyWindowDetectedCallbackMatcher: Withable, Equatable {
     var appNameRegexSubstring: CaseInsensitiveRegex?
     var windowTitleRegexSubstring: CaseInsensitiveRegex?
     var workspace: String?
-    var duringAeroSpaceStartup: Bool?
+    var duringHyprMacStartup: Bool?
 
     var debugJson: Json {
         var resultParts: [String] = []
@@ -47,8 +47,8 @@ struct LegacyWindowDetectedCallbackMatcher: Withable, Equatable {
         if let workspace {
             resultParts.append("workspace=\"\(workspace)\"")
         }
-        if let duringAeroSpaceStartup {
-            resultParts.append("duringAeroSpaceStartup=\(duringAeroSpaceStartup)")
+        if let duringHyprMacStartup {
+            resultParts.append("duringHyprMacStartup=\(duringHyprMacStartup)")
         }
         return .string(resultParts.joined(separator: ", "))
     }
@@ -78,7 +78,7 @@ private let matcherParsers: [String: any ParserProtocol<LegacyWindowDetectedCall
     "workspace": Parser(\.workspace, upcast(parseString)),
     "app-name-regex-substring": Parser(\.appNameRegexSubstring, upcast(parseCasInsensitiveRegex)),
     "window-title-regex-substring": Parser(\.windowTitleRegexSubstring, upcast(parseCasInsensitiveRegex)),
-    "during-hyprmac-startup": Parser(\.duringAeroSpaceStartup, upcast(parseBool)),
+    "during-hyprmac-startup": Parser(\.duringHyprMacStartup, upcast(parseBool)),
 ]
 
 private func upcast<T>(
@@ -88,24 +88,24 @@ private func upcast<T>(
 }
 
 func parseOnWindowDetectedArray(_ raw: OrderedJson, _ backtrace: ConfigBacktrace, _ c: inout ConfigParserContext) -> [WindowDetectedCallback] {
-    parseWindowCallbackArray(raw, backtrace, &c, allowDuringAeroSpaceStartup: true)
+    parseWindowCallbackArray(raw, backtrace, &c, allowDuringHyprMacStartup: true)
 }
 
 /// The same table as on-window-detected, so the matchers and `check-further-callbacks` work the same way
 func parseOnWindowTitleChangedArray(_ raw: OrderedJson, _ backtrace: ConfigBacktrace, _ c: inout ConfigParserContext) -> [WindowDetectedCallback] {
-    parseWindowCallbackArray(raw, backtrace, &c, allowDuringAeroSpaceStartup: false)
+    parseWindowCallbackArray(raw, backtrace, &c, allowDuringHyprMacStartup: false)
 }
 
 private func parseWindowCallbackArray(
     _ raw: OrderedJson,
     _ backtrace: ConfigBacktrace,
     _ c: inout ConfigParserContext,
-    allowDuringAeroSpaceStartup: Bool,
+    allowDuringHyprMacStartup: Bool,
 ) -> [WindowDetectedCallback] {
     if let array = raw.asArrayOrNil {
         return array.enumerated()
             .map { (index, raw) in
-                parseWindowDetectedCallback(raw, backtrace + .index(index), &c, allowDuringAeroSpaceStartup: allowDuringAeroSpaceStartup)
+                parseWindowDetectedCallback(raw, backtrace + .index(index), &c, allowDuringHyprMacStartup: allowDuringHyprMacStartup)
             }
             .filterNotNil()
     } else {
@@ -135,13 +135,13 @@ private func parseWindowDetectedCallback(
     _ raw: OrderedJson,
     _ backtrace: ConfigBacktrace,
     _ c: inout ConfigParserContext,
-    allowDuringAeroSpaceStartup: Bool,
+    allowDuringHyprMacStartup: Bool,
 ) -> WindowDetectedCallback? {
     var myContext = ConfigParserContext(configVersion: c.configVersion, errors: [], warnings: [])
     let callback = parseNonEmptyTable(raw, WindowDetectedCallback(), windowDetectedParser, backtrace, &myContext)
 
     // Title changes aren't part of the startup, so the matcher would silently never match
-    if !allowDuringAeroSpaceStartup, case .legacy(let matcher) = callback.matcher, matcher.duringAeroSpaceStartup != nil {
+    if !allowDuringHyprMacStartup, case .legacy(let matcher) = callback.matcher, matcher.duringHyprMacStartup != nil {
         myContext.errors.append(.init(
             backtrace + .key("if") + .key("during-hyprmac-startup"),
             "'during-hyprmac-startup' isn't supported in 'on-window-title-changed'",

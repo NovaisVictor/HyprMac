@@ -1,7 +1,7 @@
 import AppKit
 import Common
 
-struct Rect: Withable, AeroAny, Equatable {
+struct Rect: Withable, HyprMacAny, Equatable {
     var topLeftX: CGFloat
     var topLeftY: CGFloat
 

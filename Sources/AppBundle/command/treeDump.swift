@@ -151,7 +151,7 @@ extension TreeDumpWorkspace {
     /// Synchronous, so that the snapshot is consistent. Titles are fetched afterwards, see ``fetchTitles(_:)``
     @MainActor
     static func snapshot(_ workspace: Workspace, focus: LiveFocus) throws -> TreeDumpWorkspace {
-        let obj = AeroObj.workspace(workspace)
+        let obj = HyprMacObj.workspace(workspace)
         // Children of the workspace are read directly rather than through the accessors that create missing
         // containers, so that printing the tree doesn't change it
         func windows<T: NonLeafTreeNodeObject>(_ type: T.Type) throws -> [TreeDumpWindow] {
@@ -249,7 +249,7 @@ extension TreeDumpContainer {
 extension TreeDumpWindow {
     @MainActor
     fileprivate static func snapshot(_ window: Window, focus: LiveFocus) throws -> TreeDumpWindow {
-        let obj = AeroObj.window(.withoutTitle(window))
+        let obj = HyprMacObj.window(.withoutTitle(window))
         let weight: CGFloat? = switch window.parent.map({ getChildParentRelation(child: window, parent: $0) }) {
             case .tiling(let parent): window.getWeight(parent.orientation)
             default: nil

@@ -1107,10 +1107,10 @@ defaults write com.apple.dock expose-group-apps -bool true && killall Dock
 There is an observation that macOS works better and more stable if you disable `Displays have separate Spaces`. (It's enabled by default)
 People report all sorts of weird issues related to focus and performance when this setting is enabled:
 
-* Wrong window may receive focus in multi-monitor setup: https://github.com/nikitabobko/AeroSpace/issues/101[#101] (Bug in Apple API)
-* Wrong borderless Alacritty window may receive focus in *single monitor* setup: https://github.com/nikitabobko/AeroSpace/issues/247[#247] (Bug in Apple API)
-* Performance issues: https://github.com/nikitabobko/AeroSpace/issues/333[#333]
-* macOS randomly switches focus back: https://github.com/nikitabobko/AeroSpace/issues/289[#289]
+* Wrong window may receive focus in multi-monitor setup (Bug in Apple API)
+* Wrong borderless Alacritty window may receive focus in *single monitor* setup (Bug in Apple API)
+* Performance issues
+* macOS randomly switches focus back
 
 When `Displays have separate Spaces` is enabled,
 moving windows between monitors causes windows to move between different Spaces which is not correctly handled by the public APIs HyprMac uses,

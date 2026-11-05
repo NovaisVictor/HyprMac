@@ -9,7 +9,7 @@ let swiftSettings: [SwiftSetting] = [
 ]
 
 let package = Package(
-    name: "AeroSpacePackage",
+    name: "HyprMacPackage",
     // Runtime support for parameterized protocol types is only available in macOS 13.0.0 or newer
     // And it specifies deploymentTarget for CLI
     platforms: [.macOS(.v13)], // #MACOS_MIN_DEPLOYMENT_TARGET
@@ -17,7 +17,7 @@ let package = Package(
     products: [
         .executable(name: "hyprmac", targets: ["Cli"]),
         // Don't use this build for release, use xcode instead
-        .executable(name: "HyprMacApp", targets: ["AeroSpaceApp"]),
+        .executable(name: "HyprMacApp", targets: ["HyprMacApp"]),
         // We only need to expose this as a product for xcode
         .library(name: "AppBundle", targets: ["AppBundle"]),
     ],
@@ -67,7 +67,7 @@ let package = Package(
             swiftSettings: swiftSettings,
         ),
         .executableTarget(
-            name: "AeroSpaceApp",
+            name: "HyprMacApp",
             dependencies: [
                 .target(name: "AppBundle"),
                 .target(name: "Macros"),

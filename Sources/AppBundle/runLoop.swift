@@ -58,7 +58,7 @@ private final class RunLoopAction: NSObject, Sendable {
     }
 }
 
-final class RunLoopJob: Sendable, AeroAny {
+final class RunLoopJob: Sendable, HyprMacAny {
     // Alternative 1. In #macos15, it's possible to use `Atomic<Bool>` from `Synchronization` module
     // Alternative 2. https://github.com/apple/swift-atomics/tree/main but I don't want to add one more dependency just for
     //                AtomicBool

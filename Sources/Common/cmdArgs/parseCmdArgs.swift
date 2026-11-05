@@ -14,7 +14,7 @@ public protocol CmdArgs:
     Withable,
     Equatable,
     CustomStringConvertible,
-    AeroAny,
+    HyprMacAny,
     Sendable
 {
     associatedtype ExitCodeType: ExitCode = BinaryExitCode

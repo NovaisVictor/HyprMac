@@ -41,8 +41,6 @@ Send GitHub PRs to https://github.com/NovaisVictor/HyprMac
 
 Maintainers can apply your patch with arbitrary modifications.
 
-Changes that aren't specific to HyprMac may fit better in [AeroSpace](https://github.com/nikitabobko/AeroSpace), the upstream project.
-
 ## Share your workflow and tips
 
 Submit your tips to [the Goodies page](./docs/goodies.adoc). The source code of the page can be found in `./docs` directory

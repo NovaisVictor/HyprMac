@@ -10,15 +10,15 @@
 		4920E6A15F59183EE730C1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25EA29BA47AE07D9E434ABE /* Assets.xcassets */; };
 		577FBDB77676F37630FAF0FE /* AppBundle in Frameworks */ = {isa = PBXBuildFile; productRef = A2839D458EBC352BFECB954B /* AppBundle */; };
 		AC00E7FDCEB32410504DDB22 /* default-config.toml in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF210B94BC8EEFDFC6E47D /* default-config.toml */; };
-		F9B10783D56A2761A70DBB6A /* AeroSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */; };
+		F3AF0BE46D0CD5233E040D4E /* HyprMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E572F3A6E0CAFE78C757B /* HyprMacApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroSpaceApp.swift; sourceTree = "<group>"; };
 		7FAF210B94BC8EEFDFC6E47D /* default-config.toml */ = {isa = PBXFileReference; path = "default-config.toml"; sourceTree = "<group>"; };
 		92672F94AF32D69AF3AE02DE /* hyprmac-package-symlink */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "hyprmac-package-symlink"; path = "hyprmac-package-symlink"; sourceTree = SOURCE_ROOT; };
 		DF7B26F7AFBDC36F7BF9E7D3 /* HyprMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HyprMac.entitlements; sourceTree = "<group>"; };
 		E33C1B4E40A4FC68DD601FA8 /* HyprMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyprMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F06E572F3A6E0CAFE78C757B /* HyprMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyprMacApp.swift; sourceTree = "<group>"; };
 		F25EA29BA47AE07D9E434ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,21 +64,21 @@
 		9B5D443047FB183F5338F009 = {
 			isa = PBXGroup;
 			children = (
-				E32E4577A8550724130186F3 /* AeroSpaceApp */,
 				5F70E63F8E55B3780B41B101 /* config-examples */,
+				F2DE22DAD7D66B0E8B225569 /* HyprMacApp */,
 				036B14DC4378F43D4FDD8D65 /* Packages */,
 				5E8C4B79396AFFABD66FF398 /* resources */,
 				F96C1F1C8629A12425EBE5C6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E32E4577A8550724130186F3 /* AeroSpaceApp */ = {
+		F2DE22DAD7D66B0E8B225569 /* HyprMacApp */ = {
 			isa = PBXGroup;
 			children = (
-				4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */,
+				F06E572F3A6E0CAFE78C757B /* HyprMacApp.swift */,
 			);
-			name = AeroSpaceApp;
-			path = ../Sources/AeroSpaceApp;
+			name = HyprMacApp;
+			path = ../Sources/HyprMacApp;
 			sourceTree = "<group>";
 		};
 		F96C1F1C8629A12425EBE5C6 /* Products */ = {
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B10783D56A2761A70DBB6A /* AeroSpaceApp.swift in Sources */,
+				F3AF0BE46D0CD5233E040D4E /* HyprMacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

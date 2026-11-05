@@ -43,7 +43,7 @@ struct ListModesTest {
         assertEquals(countResult.stderr, [])
 
         let jsonResult = await parseCommand("list-modes --json").cmdOrDie.run(.defaultEnv, .emptyStdin)
-        let expectedJson = JSONEncoder.aeroSpaceDefault.encodeToString([
+        let expectedJson = JSONEncoder.hyprMacDefault.encodeToString([
             ["mode-id": "main"],
             ["mode-id": "resize"],
             ["mode-id": "service"],
@@ -53,7 +53,7 @@ struct ListModesTest {
         assertEquals(jsonResult.stderr, [])
 
         let currentJsonResult = await parseCommand("list-modes --current --json").cmdOrDie.run(.defaultEnv, .emptyStdin)
-        let expectedCurrentJson = JSONEncoder.aeroSpaceDefault.encodeToString([
+        let expectedCurrentJson = JSONEncoder.hyprMacDefault.encodeToString([
             ["mode-id": "main"],
         ])
         assertEquals(currentJsonResult.exitCode.rawValue, 0)

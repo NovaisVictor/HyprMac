@@ -22,7 +22,7 @@ func waitForAccessibilityPermission_nonCancellable() async {
 }
 
 private func resetAccessibility() {
-    _ = try? Process.run(URL(filePath: "/usr/bin/tccutil"), arguments: ["reset", "Accessibility", aeroSpaceAppId])
+    _ = try? Process.run(URL(filePath: "/usr/bin/tccutil"), arguments: ["reset", "Accessibility", hyprMacAppId])
 }
 
 protocol ReadableAttr: Sendable {
@@ -307,7 +307,7 @@ enum Ax {
     //)
 }
 
-let kAXAeroSynthetic = "Aero.synthetic"
+let kAXHyprMacSynthetic = "HyprMac.synthetic"
 
 private func castToAxUiElementMock(_ a: AnyObject) -> AxUiElementMock {
     if isUnitTest {
@@ -315,8 +315,8 @@ private func castToAxUiElementMock(_ a: AnyObject) -> AxUiElementMock {
             let windowId = UInt32.init(String(str.prefix(upTo: commaIndex)).removePrefix("AXUIElement(windowId_native="))
             if let windowId {
                 return castToAxUiElementMock([
-                    "Aero.windowId_native": Json.int(windowId),
-                    kAXAeroSynthetic: Json.bool(true),
+                    "HyprMac.windowId_native": Json.int(windowId),
+                    kAXHyprMacSynthetic: Json.bool(true),
                 ] as AnyObject)
             }
         }

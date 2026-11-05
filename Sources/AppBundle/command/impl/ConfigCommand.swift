@@ -51,7 +51,7 @@ extension String {
         }
     }
     if args.json {
-        return switch JSONEncoder.aeroSpaceDefault.encodeToString(configMap) {
+        return switch JSONEncoder.hyprMacDefault.encodeToString(configMap) {
             case let json?: .succ(io.out(json))
             case nil: .fail(io.err("Can't convert json Data to String"))
         }

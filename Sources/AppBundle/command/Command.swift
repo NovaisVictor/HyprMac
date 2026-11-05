@@ -1,7 +1,7 @@
 import AppKit
 import Common
 
-protocol Command: AeroAny, Equatable, Sendable {
+protocol Command: HyprMacAny, Equatable, Sendable {
     associatedtype T: CmdArgs
 
     var args: T { get }

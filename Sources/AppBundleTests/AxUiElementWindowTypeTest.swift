@@ -21,18 +21,18 @@ func checkAxDumpsRecursive(_ dir: URL) throws {
 
         let rawJson = try JSONSerialization.jsonObject(with: Data.init(contentsOf: file), options: [.json5Allowed]) as! [String: Any]
         let json = Json.newOrDieRecursive(rawJson).asDictOrDie
-        let app = json["Aero.AXApp"]!.asDictOrDie
-        let appBundleId = (rawJson["Aero.App.appBundleId"] as? String).flatMap { KnownBundleId.init(rawValue: $0) }
-        let windowLevel = json["Aero.windowLevel"].map { MacOsWindowLevel.fromJson($0) ?? dieT() }
-        let activationPolicy: NSApplication.ActivationPolicy = .from(string: rawJson["Aero.App.nsApp.activationPolicy"] as! String)
+        let app = json["HyprMac.AXApp"]!.asDictOrDie
+        let appBundleId = (rawJson["HyprMac.App.appBundleId"] as? String).flatMap { KnownBundleId.init(rawValue: $0) }
+        let windowLevel = json["HyprMac.windowLevel"].map { MacOsWindowLevel.fromJson($0) ?? dieT() }
+        let activationPolicy: NSApplication.ActivationPolicy = .from(string: rawJson["HyprMac.App.nsApp.activationPolicy"] as! String)
         assertEquals(
             json.getWindowType(axApp: app, appBundleId, activationPolicy, windowLevel),
-            AxUiElementWindowType(rawValue: rawJson["Aero.AxUiElementWindowType"] as? String ?? dieT()),
+            AxUiElementWindowType(rawValue: rawJson["HyprMac.AxUiElementWindowType"] as? String ?? dieT()),
             additionalMsg: "\(file.path()):0:0: AxUiElementWindowType doesn't match",
         )
         assertEquals(
             json.isDialogHeuristic(appBundleId, windowLevel),
-            rawJson["Aero.AxUiElementWindowType_isDialogHeuristic"] as? Bool ?? dieT(),
+            rawJson["HyprMac.AxUiElementWindowType_isDialogHeuristic"] as? Bool ?? dieT(),
             additionalMsg: "\(file.path()):0:0: AxUiElementWindowType_isDialogHeuristic doesn't match",
         )
     }
@@ -51,12 +51,12 @@ extension [String: Json]: AxUiElementMock {
         }
     }
 
-    private var isSynthetic: Bool { self[kAXAeroSynthetic] != nil }
+    private var isSynthetic: Bool { self[kAXHyprMacSynthetic] != nil }
 
     public func containingNativeWindowId() -> CGWindowID? { _containingNativeWindowId() }
 
     private func _containingNativeWindowId() -> CGWindowID {
-        let windowId = self["Aero.windowId_native"]?.asInt64OrNil ?? dieT()
+        let windowId = self["HyprMac.windowId_native"]?.asInt64OrNil ?? dieT()
         return UInt32.init(exactly: windowId).orDie()
     }
 }

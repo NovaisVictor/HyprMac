@@ -1,7 +1,7 @@
 import Common
 import Foundation
 
-extension [AeroObj] {
+extension [HyprMacObj] {
     @MainActor
     func formatToJson(_ format: [InterToken<InterVar>], ignoreRightPaddingVar: Bool) -> Result<String, String> {
         var list: [[String: Primitive]] = []
@@ -22,6 +22,6 @@ extension [AeroObj] {
             }
             list.append(rawObj)
         }
-        return JSONEncoder.aeroSpaceDefault.encodeToString(list).toResult("Can't encode '\(list)' to JSON")
+        return JSONEncoder.hyprMacDefault.encodeToString(list).toResult("Can't encode '\(list)' to JSON")
     }
 }

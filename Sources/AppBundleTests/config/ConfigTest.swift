@@ -446,7 +446,6 @@ struct ConfigTest {
     }
 
     @Test func testTomlParser() {
-        // https://github.com/nikitabobko/AeroSpace/issues/1064
         let errors = parseConfig(
             """
             [[[on-window-detected]]
@@ -570,7 +569,7 @@ struct ConfigTest {
         )
         assertEquals(
             result.strErrors,
-            ["[ERROR] after-login-command: after-login-command is deprecated since AeroSpace 0.19.0. https://github.com/nikitabobko/AeroSpace/issues/1482"],
+            ["[ERROR] after-login-command: after-login-command is deprecated. Use after-startup-command instead"],
         )
 
         // Empty array is still accepted
@@ -852,7 +851,7 @@ struct ConfigTest {
         ).strErrors
         assertEquals(
             errors,
-            ["[ERROR] indent-for-nested-containers-with-the-same-orientation: Deprecated. Please drop it from the config. See https://github.com/nikitabobko/AeroSpace/issues/96"],
+            ["[ERROR] indent-for-nested-containers-with-the-same-orientation: Deprecated. Please drop it from the config"],
         )
     }
 
