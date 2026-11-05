@@ -1,0 +1,43 @@
+cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by .github/workflows/release.yml
+  version "{{VERSION}}"
+  sha256 "{{SHA256}}"
+
+  url "https://github.com/NovaisVictor/HyprMac/releases/download/v#{version}/HyprMac-#{version}.zip"
+  name "HyprMac"
+  desc "AeroSpace-based tiling window manager with Hyprland-like features"
+  homepage "https://github.com/NovaisVictor/HyprMac"
+
+  depends_on macos: :ventura # macOS 13, Package.swift: platforms: [.macOS(.v13)]
+
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-d", "com.apple.quarantine", "{{staged_path}}/HyprMac-#{version}/bin/hyprmac"], must_succeed: false
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/HyprMac.app"], must_succeed: false
+  end
+
+  app "HyprMac-#{version}/HyprMac.app"
+  binary "HyprMac-#{version}/bin/hyprmac"
+
+  binary "HyprMac-#{version}/shell-completion/zsh/_hyprmac",
+      target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_hyprmac"
+  binary "HyprMac-#{version}/shell-completion/bash/hyprmac",
+      target: "#{HOMEBREW_PREFIX}/etc/bash_completion.d/hyprmac"
+  binary "HyprMac-#{version}/shell-completion/fish/hyprmac.fish",
+      target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/hyprmac.fish"
+
+  Dir["#{staged_path}/HyprMac-#{version}/manpage/*"].each { |man| manpage man }
+
+  zap trash: [
+    "~/.hyprmac.toml",
+    "~/.config/hyprmac",
+    "~/Library/Preferences/com.victornovais.HyprMac.plist",
+  ]
+
+  caveats <<~EOS
+    HyprMac is ad-hoc signed and not notarized.
+    If macOS refuses to open it, remove the quarantine attribute:
+      xattr -dr com.apple.quarantine /Applications/HyprMac.app
+
+    The ad-hoc signature changes with every release, so macOS asks for the
+    Accessibility permission again after each update.
+  EOS
+end

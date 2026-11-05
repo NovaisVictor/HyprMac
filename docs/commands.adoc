@@ -1,0 +1,394 @@
+= HyprMac Commands
+include::util/site-attributes.adoc[]
+
+include::util/header.adoc[]
+
+Commands documentation is also available as manpages.
+
+== balance-sizes
+----
+include::hyprmac-balance-sizes.adoc[tags=synopsis]
+----
+include::hyprmac-balance-sizes.adoc[tags=purpose]
+include::hyprmac-balance-sizes.adoc[tags=body]
+
+== close
+----
+include::hyprmac-close.adoc[tags=synopsis]
+----
+include::hyprmac-close.adoc[tags=purpose]
+include::hyprmac-close.adoc[tags=body]
+
+== close-all-windows-but-current
+----
+include::hyprmac-close-all-windows-but-current.adoc[tags=synopsis]
+----
+include::hyprmac-close-all-windows-but-current.adoc[tags=purpose]
+include::hyprmac-close-all-windows-but-current.adoc[tags=body]
+
+== config
+----
+include::hyprmac-config.adoc[tags=synopsis]
+----
+include::hyprmac-config.adoc[tags=purpose]
+include::hyprmac-config.adoc[tags=body]
+
+== debug-windows
+----
+include::hyprmac-debug-windows.adoc[tags=synopsis]
+----
+include::hyprmac-debug-windows.adoc[tags=purpose]
+include::hyprmac-debug-windows.adoc[tags=body]
+
+== echo
+----
+include::hyprmac-echo.adoc[tags=synopsis]
+----
+include::hyprmac-echo.adoc[tags=purpose]
+include::hyprmac-echo.adoc[tags=body]
+
+== enable
+----
+include::hyprmac-enable.adoc[tags=synopsis]
+----
+include::hyprmac-enable.adoc[tags=purpose]
+include::hyprmac-enable.adoc[tags=body]
+
+== eval
+----
+include::hyprmac-eval.adoc[tags=synopsis]
+----
+include::hyprmac-eval.adoc[tags=purpose]
+include::hyprmac-eval.adoc[tags=body]
+
+== exec-and-forget
+----
+include::hyprmac-exec-and-forget.adoc[tags=synopsis]
+----
+include::hyprmac-exec-and-forget.adoc[tags=purpose]
+include::hyprmac-exec-and-forget.adoc[tags=body]
+
+== false
+----
+include::hyprmac-false.adoc[tags=synopsis]
+----
+include::hyprmac-false.adoc[tags=purpose]
+include::hyprmac-false.adoc[tags=body]
+
+== flatten-workspace-tree
+----
+include::hyprmac-flatten-workspace-tree.adoc[tags=synopsis]
+----
+include::hyprmac-flatten-workspace-tree.adoc[tags=purpose]
+include::hyprmac-flatten-workspace-tree.adoc[tags=body]
+
+== floating-frame
+----
+include::hyprmac-floating-frame.adoc[tags=synopsis]
+----
+include::hyprmac-floating-frame.adoc[tags=purpose]
+include::hyprmac-floating-frame.adoc[tags=body]
+
+== focus
+----
+include::hyprmac-focus.adoc[tags=synopsis]
+----
+include::hyprmac-focus.adoc[tags=purpose]
+include::hyprmac-focus.adoc[tags=body]
+
+== focus-back-and-forth
+----
+
+include::./hyprmac-focus-back-and-forth.adoc[tags=synopsis]
+----
+include::./hyprmac-focus-back-and-forth.adoc[tags=purpose]
+include::./hyprmac-focus-back-and-forth.adoc[tags=body]
+
+== focus-monitor
+----
+include::hyprmac-focus-monitor.adoc[tags=synopsis]
+----
+include::hyprmac-focus-monitor.adoc[tags=purpose]
+include::hyprmac-focus-monitor.adoc[tags=body]
+
+== fullscreen
+----
+include::hyprmac-fullscreen.adoc[tags=synopsis]
+----
+include::hyprmac-fullscreen.adoc[tags=purpose]
+include::hyprmac-fullscreen.adoc[tags=body]
+
+== grab-and-move
+----
+include::hyprmac-grab-and-move.adoc[tags=synopsis]
+----
+include::hyprmac-grab-and-move.adoc[tags=purpose]
+include::hyprmac-grab-and-move.adoc[tags=body]
+
+== grab-and-resize
+----
+include::hyprmac-grab-and-resize.adoc[tags=synopsis]
+----
+include::hyprmac-grab-and-resize.adoc[tags=purpose]
+include::hyprmac-grab-and-resize.adoc[tags=body]
+
+== join-with
+----
+include::hyprmac-join-with.adoc[tags=synopsis]
+----
+include::hyprmac-join-with.adoc[tags=purpose]
+include::hyprmac-join-with.adoc[tags=body]
+
+== layout
+----
+include::hyprmac-layout.adoc[tags=synopsis]
+----
+include::hyprmac-layout.adoc[tags=purpose]
+include::hyprmac-layout.adoc[tags=body]
+
+== list-apps
+----
+include::hyprmac-list-apps.adoc[tags=synopsis]
+----
+include::hyprmac-list-apps.adoc[tags=purpose]
+include::hyprmac-list-apps.adoc[tags=body]
+
+== list-exec-env-vars
+----
+include::hyprmac-list-exec-env-vars.adoc[tags=synopsis]
+----
+include::hyprmac-list-exec-env-vars.adoc[tags=purpose]
+include::hyprmac-list-exec-env-vars.adoc[tags=body]
+
+== list-modes
+----
+include::hyprmac-list-modes.adoc[tags=synopsis]
+----
+include::hyprmac-list-modes.adoc[tags=purpose]
+include::hyprmac-list-modes.adoc[tags=body]
+
+== list-monitors
+----
+include::hyprmac-list-monitors.adoc[tags=synopsis]
+----
+include::hyprmac-list-monitors.adoc[tags=purpose]
+include::hyprmac-list-monitors.adoc[tags=body]
+
+== list-windows
+----
+include::hyprmac-list-windows.adoc[tags=synopsis]
+----
+include::hyprmac-list-windows.adoc[tags=purpose]
+include::hyprmac-list-windows.adoc[tags=body]
+
+== list-workspaces
+----
+include::hyprmac-list-workspaces.adoc[tags=synopsis]
+----
+include::hyprmac-list-workspaces.adoc[tags=purpose]
+include::hyprmac-list-workspaces.adoc[tags=body]
+
+== macos-native-fullscreen
+----
+include::hyprmac-macos-native-fullscreen.adoc[tags=synopsis]
+----
+include::hyprmac-macos-native-fullscreen.adoc[tags=purpose]
+include::hyprmac-macos-native-fullscreen.adoc[tags=body]
+
+== macos-native-minimize
+----
+include::hyprmac-macos-native-minimize.adoc[tags=synopsis]
+----
+include::hyprmac-macos-native-minimize.adoc[tags=purpose]
+include::hyprmac-macos-native-minimize.adoc[tags=body]
+
+== mode
+----
+include::hyprmac-mode.adoc[tags=synopsis]
+----
+include::hyprmac-mode.adoc[tags=purpose]
+include::hyprmac-mode.adoc[tags=body]
+
+[#move]
+== move
+----
+include::hyprmac-move.adoc[tags=synopsis]
+----
+include::hyprmac-move.adoc[tags=purpose]
+include::hyprmac-move.adoc[tags=body]
+
+== move-mouse
+----
+include::./hyprmac-move-mouse.adoc[tags=synopsis]
+----
+include::./hyprmac-move-mouse.adoc[tags=purpose]
+include::./hyprmac-move-mouse.adoc[tags=body]
+
+== move-node-to-monitor
+----
+include::hyprmac-move-node-to-monitor.adoc[tags=synopsis]
+----
+include::hyprmac-move-node-to-monitor.adoc[tags=purpose]
+include::hyprmac-move-node-to-monitor.adoc[tags=body]
+
+== move-node-to-workspace
+----
+include::hyprmac-move-node-to-workspace.adoc[tags=synopsis]
+----
+include::hyprmac-move-node-to-workspace.adoc[tags=purpose]
+include::hyprmac-move-node-to-workspace.adoc[tags=body]
+
+== move-workspace-to-monitor
+----
+include::hyprmac-move-workspace-to-monitor.adoc[tags=synopsis]
+----
+include::hyprmac-move-workspace-to-monitor.adoc[tags=purpose]
+include::hyprmac-move-workspace-to-monitor.adoc[tags=body]
+
+== pin
+----
+include::hyprmac-pin.adoc[tags=synopsis]
+----
+include::hyprmac-pin.adoc[tags=purpose]
+include::hyprmac-pin.adoc[tags=body]
+
+== preselect
+----
+include::hyprmac-preselect.adoc[tags=synopsis]
+----
+include::hyprmac-preselect.adoc[tags=purpose]
+include::hyprmac-preselect.adoc[tags=body]
+
+== pseudotile
+----
+include::hyprmac-pseudotile.adoc[tags=synopsis]
+----
+include::hyprmac-pseudotile.adoc[tags=purpose]
+include::hyprmac-pseudotile.adoc[tags=body]
+
+== reload-config
+----
+include::hyprmac-reload-config.adoc[tags=synopsis]
+----
+include::hyprmac-reload-config.adoc[tags=purpose]
+include::hyprmac-reload-config.adoc[tags=body]
+
+== resize
+----
+include::hyprmac-resize.adoc[tags=synopsis]
+----
+include::hyprmac-resize.adoc[tags=purpose]
+include::hyprmac-resize.adoc[tags=body]
+
+== run-callback
+----
+include::hyprmac-run-callback.adoc[tags=synopsis]
+----
+include::hyprmac-run-callback.adoc[tags=purpose]
+include::hyprmac-run-callback.adoc[tags=body]
+
+== scratchpad-toggle
+----
+include::./hyprmac-scratchpad-toggle.adoc[tags=synopsis]
+----
+include::./hyprmac-scratchpad-toggle.adoc[tags=purpose]
+include::./hyprmac-scratchpad-toggle.adoc[tags=body]
+
+== split
+----
+include::hyprmac-split.adoc[tags=synopsis]
+----
+include::hyprmac-split.adoc[tags=purpose]
+include::hyprmac-split.adoc[tags=body]
+
+== subscribe
+----
+include::hyprmac-subscribe.adoc[tags=synopsis]
+----
+include::hyprmac-subscribe.adoc[tags=purpose]
+include::hyprmac-subscribe.adoc[tags=body]
+
+== swap
+----
+include::hyprmac-swap.adoc[tags=synopsis]
+----
+include::hyprmac-swap.adoc[tags=purpose]
+include::hyprmac-swap.adoc[tags=body]
+
+== swap-split
+----
+include::hyprmac-swap-split.adoc[tags=synopsis]
+----
+include::hyprmac-swap-split.adoc[tags=purpose]
+include::hyprmac-swap-split.adoc[tags=body]
+
+== test
+----
+include::hyprmac-test.adoc[tags=synopsis]
+----
+include::hyprmac-test.adoc[tags=purpose]
+include::hyprmac-test.adoc[tags=body]
+
+== test-not
+----
+include::hyprmac-test-not.adoc[tags=synopsis]
+----
+include::hyprmac-test-not.adoc[tags=purpose]
+include::hyprmac-test-not.adoc[tags=body]
+
+
+== summon-workspace
+----
+include::./hyprmac-summon-workspace.adoc[tags=synopsis]
+----
+include::./hyprmac-summon-workspace.adoc[tags=purpose]
+include::./hyprmac-summon-workspace.adoc[tags=body]
+
+== toggle-split
+----
+include::hyprmac-toggle-split.adoc[tags=synopsis]
+----
+include::hyprmac-toggle-split.adoc[tags=purpose]
+include::hyprmac-toggle-split.adoc[tags=body]
+
+== tree
+----
+include::hyprmac-tree.adoc[tags=synopsis]
+----
+include::hyprmac-tree.adoc[tags=purpose]
+include::hyprmac-tree.adoc[tags=body]
+
+== trigger-binding
+----
+include::hyprmac-trigger-binding.adoc[tags=synopsis]
+----
+include::hyprmac-trigger-binding.adoc[tags=purpose]
+include::hyprmac-trigger-binding.adoc[tags=body]
+
+== true
+----
+include::hyprmac-true.adoc[tags=synopsis]
+----
+include::hyprmac-true.adoc[tags=purpose]
+include::hyprmac-true.adoc[tags=body]
+
+== volume
+----
+include::./hyprmac-volume.adoc[tags=synopsis]
+----
+include::./hyprmac-volume.adoc[tags=purpose]
+include::./hyprmac-volume.adoc[tags=body]
+
+== workspace
+----
+include::hyprmac-workspace.adoc[tags=synopsis]
+----
+include::hyprmac-workspace.adoc[tags=purpose]
+include::hyprmac-workspace.adoc[tags=body]
+
+== workspace-back-and-forth
+----
+include::hyprmac-workspace-back-and-forth.adoc[tags=synopsis]
+----
+include::hyprmac-workspace-back-and-forth.adoc[tags=purpose]
+include::hyprmac-workspace-back-and-forth.adoc[tags=body]

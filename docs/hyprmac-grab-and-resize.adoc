@@ -1,0 +1,52 @@
+= hyprmac-grab-and-resize(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-grab-and-resize
+// tag::purpose[]
+:manpurpose: Resize the window under the mouse cursor by dragging it while a mouse binding is held
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac grab-and-resize [-h|--help]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}.
+
+The command can only be used as the value of a mouse binding.
+It fails when it is run from the CLI or by `trigger-binding`.
+
+----
+[mode.main.binding]
+alt-rightMouse = 'grab-and-resize'
+----
+
+Pressing the mouse button with the binding modifiers grabs the window under the cursor.
+The click is not delivered to the application.
+The corner of the window nearest to the cursor follows the cursor until the button is released,
+even if the modifiers are released earlier.
+The opposite corner stays in place.
+
+* Floating windows are resized live.
+* Tiling windows are resized live, and the neighbour windows adjust their sizes on release.
+Resizing changes the sizes in the closest `tiles` containers, `accordion` containers are skipped.
+
+The grab is cancelled, and tiling windows return to their size, when the screen gets locked,
+the macOS Space changes, the config is reloaded, HyprMac is disabled, or the window disappears.
+
+See: xref:guide.adoc#mouse-bindings[Mouse bindings]
+// end::body[]
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

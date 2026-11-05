@@ -1,0 +1,72 @@
+= hyprmac-test(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-test
+// tag::purpose[]
+:manpurpose: Condition evaluation utility
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac test [-h|--help] <lhs> = <rhs>
+hyprmac test [-h|--help] <lhs> ~= <rhs>
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The `test` utility evaluates the expression and, if it evaluates to true, returns a zero (true) exit status; otherwise it returns 1 (false).
+
+The utility is inspired by the builtin `/bin/test` utility.
+
+`<lhs> = <rhs>`:: Tests that `<lhs>` equals to `<rhs>`.
+`<lhs> ~= <rhs>`:: Tests that `<lhs>` contains case insensitive `<rhs>` regex. The command fails if `<lhs>` is not of type string.
+
+// =========================================================== Examples
+include::./util/conditional-examples-header.adoc[]
+
+Test if the application ID equals to Chrome: `hyprmac test %{app-bundle-id} = com.google.Chrome`
+
+Test if the application name contains "chrome" (case insensitive): `hyprmac test %{app-name} ~= chrome`
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+<lhs>::
+The left hand side of the expression.
+The left hand side must be one of the interpolation variables (see below).
+
+<rhs>::
+An integer, a boolean (`true`/`false`), a regex, or just a plain string.
+The way the expression is interpreted depends on the type of `<lhs>` and the infix operator.
+
+// =========================================================== Interpolation Variables
+include::./util/conditional-interpolation-variables-header.adoc[]
+
+include::./util/interpolation-vars-window.adoc[]
+
+include::./util/interpolation-vars-app.adoc[]
+
+include::./util/interpolation-vars-workspace.adoc[]
+
+include::./util/interpolation-vars-monitor.adoc[]
+
+// =========================================================== Exit codes
+include::./util/conditional-exit-code-header.adoc[]
+
+0:: The expression has evaluated to `true`.
+1:: The expression has evaluated to `false`.
+
+>1::
+An error occurred.
+For instance, when `<rhs>` type doesn't match `<lhs>` type, or if the `test` subcommand couldn't be parsed.
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

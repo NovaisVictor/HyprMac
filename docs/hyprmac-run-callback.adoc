@@ -1,0 +1,70 @@
+= hyprmac-run-callback(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-run-callback
+// tag::purpose[]
+:manpurpose: Run HyprMac config callbacks on demand
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac run-callback [-h|--help] [--for-every-window|--window-id <window-id>] on-window-detected
+hyprmac run-callback [-h|--help] [--window-id <window-id>] on-window-title-changed
+hyprmac run-callback [-h|--help] (on-focus-changed|on-focused-monitor-changed)
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The command lets you manually re-run callbacks that HyprMac normally invokes in response to events:
+
+* `on-window-detected` - callbacks defined by `on-window-detected` config option.
+  By default the callbacks are run for the focused window only.
+  Pass `--for-every-window` to apply the callbacks to every currently known window
+  (useful right after `reload-config` to retroactively apply new rules to already open windows),
+  or pass `--window-id` to target a specific window.
+* `on-window-title-changed` - callbacks defined by `on-window-title-changed` config option.
+  The callbacks run for the focused window, or for the window passed with `--window-id`.
+  Every callback whose `if` matches the window runs (respecting `check-further-callbacks`),
+  even if it matched before and the title didn't change.
+* `on-focus-changed` - runs commands listed under the `on-focus-changed` config key.
+* `on-focused-monitor-changed` - runs commands listed under the `on-focused-monitor-changed` config key.
+
+The command forwards stdout and stderr of all commands run in the callback.
+That opens up one more usecase - you can use this command to see the output of your callbacks.
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--for-every-window::
+Run `on-window-detected` callbacks for every window.
+Only valid with `on-window-detected`.
+Mutually exclusive with `--window-id`.
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
++
+Only valid with `on-window-detected` and `on-window-title-changed`.
+Mutually exclusive with `--for-every-window`.
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+<callback>:: One of: `on-window-detected`, `on-focus-changed`, `on-focused-monitor-changed`, `on-window-title-changed`
+
+// =========================================================== Exit code
+include::./util/conditional-exit-code-header.adoc[]
+
+The command forwards the exit code of the callback.
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

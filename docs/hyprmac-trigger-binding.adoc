@@ -1,0 +1,47 @@
+= hyprmac-trigger-binding(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-trigger-binding
+// tag::purpose[]
+:manpurpose: Trigger HyprMac binding as if it was pressed by user
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac trigger-binding [-h|--help] --mode <mode-id> [--] <binding>
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+You can use hyprmac-config command to inspect available bindings: +
+`hyprmac config --get mode.main.binding --keys`
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+--mode <mode-id>:: Mode to search `<binding>` in
+
+// =========================================================== Arguments
+include::util/conditional-arguments-header.adoc[]
+
+<binding>:: Binding to trigger
+
+// =========================================================== Examples
+include::util/conditional-examples-header.adoc[]
+
+* Run alphabetically first binding from config (useless and synthetic example): +
+`hyprmac trigger-binding --mode main "$(hyprmac config --get mode.main.binding --keys | head -1)"`
+* Trigger `alt-tab` binding: +
+`hyprmac trigger-binding --mode main alt-tab`
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

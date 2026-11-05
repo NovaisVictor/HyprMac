@@ -1,0 +1,63 @@
+@testable import AppBundle
+import Common
+import Foundation
+import Testing
+
+@MainActor
+@Suite(.serializedGlobally)
+struct ListModesTest {
+    @Test func testParseListModesCommand() {
+        testParseSingleCommandSucc("list-modes", ListModesCmdArgs(rawArgs: []))
+        testParseSingleCommandSucc("list-modes --current", ListModesCmdArgs(rawArgs: []).with(\.current, true))
+        testParseSingleCommandSucc("list-modes --json", ListModesCmdArgs(rawArgs: []).with(\.json, true))
+        testParseSingleCommandSucc("list-modes --count", ListModesCmdArgs(rawArgs: []).with(\.outputOnlyCount, true))
+        testParseSingleCommandSucc("list-modes --current --json", ListModesCmdArgs(rawArgs: []).with(\.current, true).with(\.json, true))
+    }
+
+    @Test func testParseListModesCommandConflicts() {
+        assertEquals(parseCommand("list-modes --json --count").errorOrNil, "ERROR: Conflicting flags: --count, --json")
+        assertEquals(parseCommand("list-modes --current --count").errorOrNil, "ERROR: Conflicting flags: --count, --current")
+    }
+
+    @MainActor
+    @Test func testListModesOutput() async {
+        config.modes = [
+            "main": Mode(bindings: [:]),
+            "service": Mode(bindings: [:]),
+            "resize": Mode(bindings: [:]),
+        ]
+
+        let defaultResult = await parseCommand("list-modes").cmdOrDie.run(.defaultEnv, .emptyStdin)
+        assertEquals(defaultResult.exitCode.rawValue, 0)
+        assertEquals(defaultResult.stdout, ["main", "resize", "service"])
+        assertEquals(defaultResult.stderr, [])
+
+        let currentResult = await parseCommand("list-modes --current").cmdOrDie.run(.defaultEnv, .emptyStdin)
+        assertEquals(currentResult.exitCode.rawValue, 0)
+        assertEquals(currentResult.stdout, ["main"])
+        assertEquals(currentResult.stderr, [])
+
+        let countResult = await parseCommand("list-modes --count").cmdOrDie.run(.defaultEnv, .emptyStdin)
+        assertEquals(countResult.exitCode.rawValue, 0)
+        assertEquals(countResult.stdout, ["3"])
+        assertEquals(countResult.stderr, [])
+
+        let jsonResult = await parseCommand("list-modes --json").cmdOrDie.run(.defaultEnv, .emptyStdin)
+        let expectedJson = JSONEncoder.aeroSpaceDefault.encodeToString([
+            ["mode-id": "main"],
+            ["mode-id": "resize"],
+            ["mode-id": "service"],
+        ])
+        assertEquals(jsonResult.exitCode.rawValue, 0)
+        assertEquals(jsonResult.stdout, [expectedJson])
+        assertEquals(jsonResult.stderr, [])
+
+        let currentJsonResult = await parseCommand("list-modes --current --json").cmdOrDie.run(.defaultEnv, .emptyStdin)
+        let expectedCurrentJson = JSONEncoder.aeroSpaceDefault.encodeToString([
+            ["mode-id": "main"],
+        ])
+        assertEquals(currentJsonResult.exitCode.rawValue, 0)
+        assertEquals(currentJsonResult.stdout, [expectedCurrentJson])
+        assertEquals(currentJsonResult.stderr, [])
+    }
+}

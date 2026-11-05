@@ -1,0 +1,53 @@
+= hyprmac-grab-and-move(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-grab-and-move
+// tag::purpose[]
+:manpurpose: Move the window under the mouse cursor by dragging it while a mouse binding is held
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac grab-and-move [-h|--help]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}.
+
+The command can only be used as the value of a mouse binding.
+It fails when it is run from the CLI or by `trigger-binding`.
+
+----
+[mode.main.binding]
+alt-leftMouse = 'grab-and-move'
+----
+
+Pressing the mouse button with the binding modifiers grabs the window under the cursor.
+The click is not delivered to the application.
+The window follows the cursor until the button is released, even if the modifiers are released earlier.
+
+* Floating windows move freely, also across monitors.
+On release, the window is assigned to the workspace of the monitor under its center.
+* Tiling windows follow the cursor, the rest of the layout stays in place.
+On release, the window swaps with the tiling window under the cursor.
+If the cursor is on another monitor, the window moves to that monitor next to the window under the cursor.
+If nothing is under the cursor, the window returns to its place.
+
+The grab is cancelled, and tiling windows return to their place, when the screen gets locked,
+the macOS Space changes, the config is reloaded, HyprMac is disabled, or the window disappears.
+
+See: xref:guide.adoc#mouse-bindings[Mouse bindings]
+// end::body[]
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

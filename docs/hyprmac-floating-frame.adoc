@@ -1,0 +1,73 @@
+= hyprmac-floating-frame(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-floating-frame
+// tag::purpose[]
+:manpurpose: Set the size and/or the position of the focused floating window
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac floating-frame [-h|--help] [--window-id <window-id>] [--size <width>x<height>] [--position <x>,<y>]
+hyprmac floating-frame [-h|--help] [--window-id <window-id>] [--size <width>x<height>] --center
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+At least one of `--size`, `--position` or `--center` must be specified.
+The parts of the frame that are not specified are taken from the current window frame.
+The command fails if the window is not floating.
+
+All values are either absolute pixels (e.g. `800`) or a percent (e.g. `60%`) of the reference rect.
+The reference rect is the visible area of the monitor of the window's workspace
+(the area not occupied by the menu bar and the dock), shrunk by the outer gaps (`gaps.outer.*` config options).
+It's the same area that tiling windows occupy.
+
+The resulting frame is clamped to the reference rect, so that the window always stays fully visible.
+
+The frame becomes the remembered floating frame of the window:
+it's preserved when the window is hidden and shown again on workspace switching.
+If the window's workspace is not visible, the frame is applied when the workspace becomes visible.
+
+The command can be used in xref:guide.adoc#on-window-detected-callback[on-window-detected] callbacks:
+
+[source,toml]
+----
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating', 'floating-frame --size 60%x70% --center']
+----
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--size <width>x<height>::
+The size of the window.
+Each dimension is either pixels or a percent of the reference rect dimension.
+E.g. `--size 1200x800`, `--size 60%x70%`, `--size 50%x900`
+
+--position <x>,<y>::
+The position of the window top-left corner relative to the reference rect top-left corner.
+Each coordinate is either pixels or a percent of the reference rect dimension.
+E.g. `--position 0,0`, `--position 10%,5%`.
+Incompatible with `--center`
+
+--center::
+Center the window inside the reference rect.
+Incompatible with `--position`
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

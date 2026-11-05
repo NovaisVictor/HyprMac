@@ -1,0 +1,38 @@
+= hyprmac-swap-split(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-swap-split
+// tag::purpose[]
+:manpurpose: Reverse the order of the children of the container that holds the focused window
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac swap-split [-h|--help] [--window-id <window-id>]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The command acts on the nearest tiling parent container of the window.
+Each child keeps its size, so in a container with two children, the children swap their places and their sizes.
+
+The command fails if the window isn't tiling, or if its parent container has `accordion` or `master` layout.
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

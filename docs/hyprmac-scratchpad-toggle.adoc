@@ -1,0 +1,105 @@
+= hyprmac-scratchpad-toggle(1)
+include::util/man-attributes.adoc[]
+// tag::purpose[]
+:manpurpose: Show a window as a floating scratchpad on the focused workspace, or send it back to its home workspace
+// end::purpose[]
+:manname: hyprmac-scratchpad-toggle
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac scratchpad-toggle [-h|--help] --app-bundle-id <app-bundle-id>
+hyprmac scratchpad-toggle [-h|--help] --window-id <window-id>
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The scratchpad is built on top of regular workspaces: the window is simply moved between its home workspace and the focused workspace.
+No hidden or special workspace is involved.
+
+The command picks one of the following actions:
+
+Show::
+The window isn't shown as a scratchpad.
+HyprMac remembers the workspace the window belongs to (its home workspace) and whether it was tiling or floating there.
+Then the window is made floating, moved to the focused workspace, and focused.
++
+The floating frame is chosen in this order:
+the frame the window had the last time it was hidden by `scratchpad-toggle`;
+the window's own floating frame if it was already floating on its home workspace;
+otherwise, the window is centered on the monitor of the focused workspace and takes 2/3 of its width and height.
+
+Hide::
+The window is shown as a scratchpad on the focused workspace.
+The window is moved back to its home workspace, and its previous layout (tiling or floating) is restored there.
+Its floating frame is remembered for the next show.
+Focus goes back to the window that was focused before the scratchpad was shown, if it's still on the focused workspace.
+Otherwise, the focused workspace's most recent window is focused.
++
+If the home workspace no longer exists (empty workspaces are garbage collected), it's recreated,
+the same way `move-node-to-workspace` creates its target workspace.
+The window becomes tiling in the home workspace's tree, but its previous position in the tree isn't restored.
+
+Bring::
+The window is shown as a scratchpad on some other workspace (for example, you switched workspaces while the scratchpad was visible).
+The window is moved to the focused workspace and focused, keeping its home workspace.
+
+If the window already belongs to the focused workspace and isn't shown as a scratchpad
+(for example, you toggle the scratchpad while its home workspace is focused), the window is just focused.
+
+Scratchpad state survives `reload-config`, but it doesn't survive HyprMac restart.
+The state of a window is forgotten when the window is closed.
+
+Windows that are minimized, in macOS native fullscreen, or that belong to hidden apps can't be toggled.
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--app-bundle-id <app-bundle-id>::
+Toggle a window of the app with the given bundle ID.
+If the app has several windows, the window that is shown as a scratchpad is preferred (the one on the focused workspace first).
+Otherwise, a window that is the most recent window of its workspace is preferred.
+Windows on the focused workspace are picked last.
++
+The command fails if the app has no window that can be toggled.
+
+--window-id <window-id>::
+Toggle the window with the given ID.
+Unlike other commands, `HYPRMAC_WINDOW_ID` environment variable and the focused window are never used as a fallback.
+
+// =========================================================== Examples
+include::./util/conditional-examples-header.adoc[]
+
+* Toggle WhatsApp and Spotify that live on their dedicated workspaces `W` and `S`:
++
+[source,toml]
+----
+[mode.main.binding]
+    alt-w = 'scratchpad-toggle --app-bundle-id net.whatsapp.WhatsApp'
+    alt-s = 'scratchpad-toggle --app-bundle-id com.spotify.client'
+----
+
+* Launch the app if it has no window yet.
+`exec-and-forget` is available neither in HyprMac shell nor in CLI, that's why the fallback goes through the CLI and `bash`:
++
+[source,toml]
+----
+[mode.main.binding]
+    alt-w = 'exec-and-forget hyprmac scratchpad-toggle --app-bundle-id net.whatsapp.WhatsApp || open -b net.whatsapp.WhatsApp'
+----
++
+The newly opened window appears wherever your config puts new windows (e.g. `on-window-detected` rules).
+Press the binding again to show it as a scratchpad.
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

@@ -1,0 +1,41 @@
+= hyprmac-toggle-split(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-toggle-split
+// tag::purpose[]
+:manpurpose: Flip the orientation of the container that holds the focused window
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac toggle-split [-h|--help] [--window-id <window-id>]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The command acts on the nearest tiling parent container of the window: `h_tiles` becomes `v_tiles` and vice versa.
+The orientation of the other containers isn't changed.
+
+Unlike `layout horizontal|vertical`, the orientation stays even if `enable-normalization-opposite-orientation-for-nested-containers` is enabled.
+The container is pinned, the same way the containers created by xref:guide.adoc#new-window-placement[`new-window-placement = 'dwindle'`] are.
+
+The command fails if the window isn't tiling, or if its parent container has `accordion` or `master` layout.
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

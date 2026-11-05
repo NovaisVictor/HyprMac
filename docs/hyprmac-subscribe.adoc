@@ -1,0 +1,108 @@
+= hyprmac-subscribe(1)
+include::util/man-attributes.adoc[]
+// tag::purpose[]
+:manpurpose: Subscribe to HyprMac events and receive notifications via socket
+// end::purpose[]
+:manname: hyprmac-subscribe
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac subscribe [-h|--help] [--all] [--no-send-initial] [<event>...]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+This command connects to the HyprMac server and receives real-time event notifications as JSON lines.
+The connection remains open until terminated (e.g., via Ctrl+C).
+
+On connect, the current state is sent immediately (focus-changed with current window/workspace, mode-changed with current mode, monitors-changed with the current monitors, etc.).
+Events that describe a one-off occurrence rather than a state (window-detected, window-closed, window-moved, window-title-changed, binding-triggered) are never sent on connect.
+
+Events are delivered to every subscriber in the order they were emitted.
+Fields that don't have a value are omitted from the JSON object.
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--all:: Subscribe to all event types
+
+--no-send-initial:: Do not send the initial state on connect
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+The following events can be subscribed to:
+
+focus-changed:: Fired when window focus changes. Includes `windowId`, `workspace`.
+
+focused-monitor-changed:: Fired when the focused monitor changes. Includes `workspace`, `monitorId`.
+
+focused-workspace-changed:: Fired when the focused workspace changes. Includes `workspace`, `prevWorkspace`.
+
+mode-changed:: Fired when the binding mode changes. Includes `mode`.
+
+window-detected:: Fired when a new window is detected, before its `on-window-detected` callbacks run. Includes `windowId`, `workspace`, `appBundleId`, `appName`.
+`workspace` is where the window was placed on detection.
+It's already the target of the leading `move-node-to-workspace` callbacks when HyprMac could place the window there in advance.
+
+binding-triggered:: Fired when a keyboard binding is triggered. Includes `binding`, `mode`.
+
+window-closed:: Fired when a window is closed (or its app is terminated).
+Includes `windowId`, `workspace`, `appBundleId`, `appName`.
+`workspace` is the workspace the window belonged to right before it was closed.
+It's omitted if the window didn't belong to any workspace (e.g. it was minimized).
+
+window-moved:: Fired when the workspace of a window changes, no matter the reason
+(`move-node-to-workspace`, `move-node-to-monitor`, dragging the window with the mouse to another monitor,
+minimizing or restoring the window, on-window-detected callbacks, etc.).
+Includes `windowId`, `workspace`, `prevWorkspace`, `appBundleId`, `appName`.
+Minimized windows don't belong to any workspace:
+when a window is minimized, `workspace` is omitted; when a minimized window is restored, `prevWorkspace` is omitted.
+Newly detected and closed windows are covered by window-detected and window-closed, window-moved isn't fired for them.
+If an on-window-detected callback moves a new window, window-moved is fired after window-detected.
+The change is detected when HyprMac finishes processing a command or a macOS event, so a window that is moved
+back and forth within a single command doesn't fire the event.
+
+monitors-changed:: Fired when a monitor is connected or disconnected, or when the monitor arrangement changes in a way
+that changes monitor ids.
+Includes `monitors`: the list of all monitors sorted by monitor id, each one with `monitorId` and `monitorName`.
+Monitor ids are the same as in `list-monitors`: they are 1-based indexes, so they shift when monitors are added or removed.
+Prefer `monitorName` to identify a monitor across events.
+
+window-title-changed:: Fired when the title of a window changes.
+Includes `windowId`, `workspace`, `appBundleId`, `appName`, `title`.
+`title` is the new title, read from the window when the change is processed.
+Changes are debounced: a window that changes its title several times in a row fires the event once, 300 ms after the last change.
+The event isn't fired if the title ended up the same.
+HyprMac observes the titles only while there's a subscriber of this event or `on-window-title-changed` callbacks in the config.
+Some apps don't report title changes, their windows never fire the event.
+
+// =========================================================== Output Format
+include::util/conditional-output-format-header.adoc[]
+
+Events are output as JSON lines (one JSON object per line):
+
+----
+{"_event":"focused-monitor-changed","monitorId":1,"workspace":"M"}
+{"_event":"focused-workspace-changed","prevWorkspace":"M","workspace":"M"}
+{"_event":"mode-changed","mode":"main"}
+{"_event":"focus-changed","windowId":28218,"workspace":"M"}
+{"_event":"window-moved","appBundleId":"com.apple.Safari","appName":"Safari","prevWorkspace":"M","windowId":28218,"workspace":"W"}
+{"_event":"window-title-changed","appBundleId":"com.apple.Safari","appName":"Safari","title":"HyprMac","windowId":28218,"workspace":"W"}
+{"_event":"window-closed","appBundleId":"com.apple.Safari","appName":"Safari","windowId":28218,"workspace":"W"}
+{"_event":"monitors-changed","monitors":[{"monitorId":1,"monitorName":"Built-in Retina Display"},{"monitorId":2,"monitorName":"DELL U2720Q"}]}
+----
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

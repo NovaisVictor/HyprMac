@@ -1,0 +1,5 @@
+ifndef::env-site[]
+:doctype: manpage
+:manmanual: HyprMac Manual
+:mansource: HyprMac
+endif::[]

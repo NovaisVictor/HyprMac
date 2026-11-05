@@ -1,0 +1,2 @@
+Act on the specified workspace instead of the focused workspace.
+The flag takes precedence over `HYPRMAC_WINDOW_ID` and `HYPRMAC_WORKSPACE` environment variables.

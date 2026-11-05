@@ -1,0 +1,99 @@
+= hyprmac-tree(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-tree
+// tag::purpose[]
+:manpurpose: Print the tree of windows and containers of workspaces
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac tree [-h|--help] (--workspace <workspace>|--focused|--all) [--json]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+The tree includes the tiling containers with their layouts and the windows of every workspace,
+including floating windows, macOS native fullscreen windows, macOS native minimized windows and windows of hidden apps.
+See xref:guide.adoc#tree[the guide] for documentation about the tree.
+
+macOS native minimized windows don't belong to any workspace.
+Since HyprMac returns them to the focused workspace when they are unminimized, they are printed as part of the focused workspace.
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--workspace <workspace>:: Print the tree of the specified workspace
+
+--focused:: Print the tree of the focused workspace
+
+--all:: Print the trees of all workspaces
+
+--json:: Output in JSON format
+
+// =========================================================== Output Format
+include::util/conditional-output-format-header.adoc[]
+
+By default, the tree is printed with box-drawing characters:
+
+----
+workspace 1 (monitor 1 'Built-in Retina Display', focused, visible)
+├── h_tiles
+│   ├── window 2 | Firefox | GitHub (focused)
+│   └── v_master (master-ratio 0.6)
+│       ├── window 3 | Alacritty | vim
+│       └── window 4 | Alacritty | htop
+└── floating
+    └── window 5 | Finder | Downloads
+----
+
+With `--json`, the output is a JSON array with one object per workspace.
+The objects have the following keys:
+
+`schema-version`:: The version of the output format. It's incremented when keys are removed or renamed, or when their values change type. New keys can be added without incrementing it
+`type`:: `workspace`
+`name`:: The workspace name
+`monitor-id`, `monitor-name`:: The monitor the workspace is on. Same as `%{monitor-id}` and `%{monitor-name}` interpolation variables
+`is-focused`, `is-visible`:: Same as `%{workspace-is-focused}` and `%{workspace-is-visible}` interpolation variables
+`root-container`:: The root tiling container
+`floating-windows`, `macos-fullscreen-windows`, `macos-minimized-windows`, `hidden-app-windows`:: Lists of windows
+
+Tiling containers have the following keys:
+
+`type`:: `container`
+`layout`:: Same as `%{workspace-root-container-layout}` interpolation variable. E.g. `h_tiles`, `v_accordion` or `h_master`
+`orientation`:: `horizontal` or `vertical`
+`weight`:: The share of the parent container that the container occupies, relative to its siblings.
+For the root container, it's the size of the workspace along the orientation of the container
+`master-ratio`:: The share of the container that the master window occupies. `null` unless the layout is `master`
+`master-placement`:: `start` or `center`, from the `layout center_master` override or else from `master-placement` of the monitor.
+A `center` master with fewer than 3 children is still laid out at the start.
+`null` unless the layout is `master`.
+In the text output, only `center` is shown
+`has-pinned-orientation`:: `true` if the orientation of the container isn't overridden by `enable-normalization-opposite-orientation-for-nested-containers`.
+E.g. containers created by `new-window-placement = 'dwindle'`
+`children`:: A list of containers and windows
+
+Windows have the following keys:
+
+`type`:: `window`
+`window-id`, `app-name`, `app-bundle-id`, `app-pid`, `title`:: Same as `%{window-id}`, `%{app-name}`, `%{app-bundle-id}`, `%{app-pid}` and `%{window-title}` interpolation variables
+`is-focused`:: `true` if the window is focused
+`is-pseudotiled`:: `true` if the window is pseudotiled. See xref:commands.adoc#pseudotile[pseudotile]
+`is-pinned`:: `true` if the window is pinned. See xref:commands.adoc#pin[pin]
+`weight`:: The share of the parent container that the window occupies, relative to its siblings. Only for tiling windows
+`scratchpad-home-workspace`:: The workspace where the window returns when it's hidden by `scratchpad-toggle`.
+Only for windows shown by `scratchpad-toggle` on another workspace
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

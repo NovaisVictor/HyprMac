@@ -1,0 +1,351 @@
+# Place a copy of this config to ~/.hyprmac.toml
+# After that, you can edit ~/.hyprmac.toml to your liking
+
+# Config version for compatibility and deprecations
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#config-version
+# Fallback value (if you omit the key): config-version = 1
+config-version = 2
+
+# You can use it to add commands that run after HyprMac startup.
+# Available commands : https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc
+after-startup-command = []
+
+# Start HyprMac at login
+start-at-login = false
+
+# Automatically reload the config when the config file is saved
+# After setting this to true, reload once manually to start the auto-reloading
+auto-reload-config = false
+
+# Normalizations. See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#normalization
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#layouts
+# The 'accordion-padding' specifies the size of accordion padding
+# You can set 0 to disable the padding feature
+accordion-padding = 30
+
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#master-layout
+# The 'master-ratio-percent' specifies the share of the master window in the 'master' layout
+# Possible values: from 10 to 90
+master-ratio-percent = 55
+
+# Where a new window enters a 'master' container
+# Possible values: after-focused|stack-top|stack-bottom|master
+# 'after-focused' means: the new window is placed next to the most recent window, like in the other layouts
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#master-new-window
+master-new-window = 'after-focused'
+
+# Where the master window sits in the 'master' layout
+# Possible values: start|center. Either a constant or per monitor, like the gaps below
+# 'center' means: the master is in the middle, the other windows alternate between the right and the left of it.
+#                 Useful for ultrawide monitors. With fewer than 3 windows, the master stays at the start
+# Example: master-placement = [{ monitor.'Tempest' = 'center' }, 'start']
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#center-master
+master-placement = 'start'
+
+# Possible values: tiles|accordion|master
+default-root-container-layout = 'tiles'
+
+# Possible values: horizontal|vertical|auto
+# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
+#               tall monitor (anything higher than wide) gets vertical orientation
+default-root-container-orientation = 'auto'
+
+# Possible values: sibling|dwindle
+# 'sibling' means: the new window is placed next to the most recent window
+# 'dwindle' means: the new window splits the most recent window in two, along its longer side
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#new-window-placement
+new-window-placement = 'sibling'
+
+# Mouse follows focus when focused monitor changes
+# Drop it from your config, if you don't like this behavior
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#on-focus-changed-callbacks
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#move-mouse
+# Fallback value (if you omit the key): on-focused-monitor-changed = []
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
+# Also see: https://github.com/NovaisVictor/HyprMac/blob/main/docs/goodies.adoc#disable-hide-app
+automatically-unhide-macos-hidden-apps = false
+
+# List of workspaces that should stay alive even when they contain no windows,
+# even when they are invisible.
+# This config option is only available since 'config-version = 2'
+# Fallback value (if you omit the key): persistent-workspaces = []
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
+                         "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
+                         "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+# A callback that runs every time binding mode changes
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#binding-modes
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#mode
+on-mode-changed = ""
+
+focus-follows-mouse.enabled = false
+
+# Run commands when the title of a window changes so that it starts to match the 'if'.
+# Useful for windows that get their title after they appear, where on-window-detected can't match the title
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#on-window-title-changed-callback
+# Fallback value (if you omit the key): on-window-title-changed = []
+# [[on-window-title-changed]]
+#     if = 'test %{window-title} ~= "Picture-in-picture Window"'
+#     run = 'layout floating'
+
+# While a tiling window is grabbed with a mouse binding, show where the other windows will end up
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#mouse-grab-live-preview
+# Fallback values (if you omit the table): live-preview = false, ignore-app-ids = []
+# [mouse-grab]
+#     live-preview = true
+#     # Mouse bindings don't grab anything while one of these apps is frontmost
+#     # See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#mouse-grab-ignore-app-ids
+#     ignore-app-ids = ['com.figma.Desktop']
+
+# A bar of tabs above every accordion. Click a tab to focus its window. 'accordion-padding' is ignored while it's enabled
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#tab-bar
+# [tab-bar]
+#     enabled = false
+#     height = 24 # From 1 to 100
+#     font-size = 12 # From 1 to 72
+#     show-icons = true
+#     gap = 0 # Space between the bar and the windows. From 0 to 100
+#     background-color = '0xff1e1e2e' # Colors are '0xAARRGGBB' strings
+#     active-color = '0xff89b4fa'
+#     inactive-color = '0xff313244'
+#     text-color = '0xffcdd6f4'
+
+# Slide windows into their new places instead of making them jump. Only the mouse grab animation is enabled by default
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#animations
+# [animations]
+#     max-windows = 12 # Above this many windows moving at once, all of them jump
+# [animations.bezier] # Custom curves, same format as CSS cubic-bezier()
+#     snappy = [0.05, 0.9, 0.1, 1.05]
+# [animations.windows-move] # Layout changes caused by commands, and by windows that appear or go away
+#     enabled = false
+#     duration-ms = 150 # Possible values: from 0 (no animation) to 1000
+#     curve = 'ease-out' # Possible values: linear, ease-out, ease-in-out, or a name from [animations.bezier]
+#     animate-size = true # false animates the position only, and applies the size at the end
+# [animations.mouse-grab] # Requires '[mouse-grab] live-preview = true'
+#     enabled = true
+#     duration-ms = 150
+#     curve = 'ease-out'
+# [animations.scratchpad] # scratchpad-toggle
+#     enabled = false
+#     duration-ms = 200
+#     curve = 'ease-out'
+#     direction = 'bottom' # Possible values: bottom, left, right
+
+# Native window borders, a replacement for JankyBorders. Disabled by default
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#borders
+# [borders]
+#     enabled = false
+#     width = 5 # From 1 to 50. Like JankyBorders, the visible border is width / 2 thick, outside of the window
+#     radius = 'auto' # The real corner radius of each window (9 when macOS can't tell), or a fixed one from 0 to 100
+#     order = 'below' # 'below': only the outer half of the stroke shows. 'above': the whole stroke, over the window edge
+#     active-color = '0xffb537f2' # '0xAARRGGBB', or a gradient: ['0xffb537f2', '0xff89b4fa']
+#     inactive-color = '0xff45475a' # '' disables the borders of the unfocused windows
+#     gradient-angle = 45 # 0 paints the gradient from left to right, 90 from top to bottom
+#     transition-ms = 120 # Color transition on focus change. 0 disables it
+#     focus-sweep-ms = 0 # The active gradient turns once when a window gains focus. 0 disables it
+#     angle-animation-period-ms = 0 # The active gradient turns forever. 0 disables it. Costs GPU all the time
+#     glow-radius = 0 # A soft glow around the active border, the blur radius from 0 to 50. 0 disables it
+#     glow-opacity = 0.6 # From 0 to 1
+#     glow-color = '' # '' takes the active color (the middle of a gradient), or '0xAARRGGBB'
+#     focus-pulse-ms = 0 # The glow grows and settles back when a window gains focus. 0 disables it. Needs glow-radius
+
+# Possible values: (qwerty|dvorak|colemak)
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#key-mapping
+key-mapping.preset = 'qwerty'
+
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+# Possible values:
+# - Constant:     gaps.outer.top = 8
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+#                 In this example, 24 is a default value when there is no match.
+#                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
+#                 See:
+#                 https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#assign-workspaces-to-monitors
+gaps.inner.horizontal = 0
+gaps.inner.vertical =   0
+gaps.outer.left =       0
+gaps.outer.bottom =     0
+gaps.outer.top =        0
+gaps.outer.right =      0
+# When a workspace has exactly one tiling window, resolve all gaps to zero.
+# Possible values: constant or per monitor, like the gaps above.
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#smart-gaps
+# gaps.smart = true
+
+# Per-workspace rules. The options that are omitted inherit the global values above
+# See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#workspace-rules
+# Fallback value (if you omit the tables): no rules
+# [workspace.G]
+#     default-root-container-layout = 'accordion'
+#     default-root-container-orientation = 'horizontal'
+#     enable-normalization-flatten-containers = false
+#     enable-normalization-opposite-orientation-for-nested-containers = false
+#     new-window-placement = 'dwindle'
+#     master-new-window = 'stack-bottom'
+#     gaps.outer.left = 40 # The other gaps inherit the global ones
+
+# 'main' binding mode declaration
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#binding-modes
+# 'main' binding mode must be always presented
+# Fallback value (if you omit the key): mode.main.binding = {}
+[mode.main.binding]
+
+    # All possible keys:
+    # - Letters.        a, b, c, ..., z
+    # - Numbers.        0, 1, 2, ..., 9
+    # - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+    # - F-keys.         f1, f2, ..., f20
+    # - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon,
+    #                   backtick, leftSquareBracket, rightSquareBracket, space, enter, esc,
+    #                   backspace, tab, pageUp, pageDown, home, end, forwardDelete,
+    #                   sectionSign (ISO keyboards only, european keyboards only)
+    # - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+    #                   keypadMinus, keypadMultiply, keypadPlus
+    # - Arrows.         left, down, up, right
+
+    # All possible modifiers: cmd, alt, ctrl, shift
+
+    # Mouse buttons: leftMouse, rightMouse, middleMouse
+    # Mouse bindings also accept side-specific modifiers: lcmd, rcmd, lalt, ralt, lctrl, rctrl, lshift, rshift
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#mouse-bindings
+    # You can uncomment the following lines to move and resize windows by dragging them with alt held
+    # alt-leftMouse = 'grab-and-move'
+    # alt-rightMouse = 'grab-and-resize'
+
+    # A binding can also be an inline table, to run on key release or to repeat while the key is held
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#binding-triggers
+    # alt-x = { run = 'layout tiles horizontal vertical', on = 'release' }
+    # alt-minus = { run = 'resize smart -50', repeat = true }
+
+    # A bare modifier runs when it's pressed and released alone. Only with on = 'release'
+    # Side-specific variants are accepted: lcmd, rcmd, lalt, ralt, lctrl, rctrl, lshift, rshift
+    # It may need the Input Monitoring permission. See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#modifier-only-bindings
+    # rcmd = { run = 'workspace-back-and-forth', on = 'release' }
+
+    # All possible commands: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#exec-and-forget
+    # You can uncomment the following lines to open up terminal with alt + enter shortcut
+    # (like in i3)
+    # alt-enter = '''exec-and-forget osascript -e \
+    # 'tell application "Terminal" to tell (do script) to activate' '''
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#layout
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+
+    # Keep the window's own size, centered in its tiling slot
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#pseudotile
+    # alt-period = 'pseudotile'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#focus
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#move
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#resize
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#workspace
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+    alt-6 = 'workspace 6'
+    alt-7 = 'workspace 7'
+    alt-8 = 'workspace 8'
+    alt-9 = 'workspace 9'
+    alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+    alt-b = 'workspace B'
+    alt-c = 'workspace C'
+    alt-d = 'workspace D'
+    alt-e = 'workspace E'
+    alt-f = 'workspace F'
+    alt-g = 'workspace G'
+    alt-i = 'workspace I'
+    alt-m = 'workspace M'
+    alt-n = 'workspace N'
+    alt-o = 'workspace O'
+    alt-p = 'workspace P'
+    alt-q = 'workspace Q'
+    alt-r = 'workspace R'
+    alt-s = 'workspace S'
+    alt-t = 'workspace T'
+    alt-u = 'workspace U'
+    alt-v = 'workspace V'
+    alt-w = 'workspace W'
+    alt-x = 'workspace X'
+    alt-y = 'workspace Y'
+    alt-z = 'workspace Z'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#move-node-to-workspace
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+    alt-shift-6 = 'move-node-to-workspace 6'
+    alt-shift-7 = 'move-node-to-workspace 7'
+    alt-shift-8 = 'move-node-to-workspace 8'
+    alt-shift-9 = 'move-node-to-workspace 9'
+    alt-shift-a = 'move-node-to-workspace A'
+    alt-shift-b = 'move-node-to-workspace B'
+    alt-shift-c = 'move-node-to-workspace C'
+    alt-shift-d = 'move-node-to-workspace D'
+    alt-shift-e = 'move-node-to-workspace E'
+    alt-shift-f = 'move-node-to-workspace F'
+    alt-shift-g = 'move-node-to-workspace G'
+    alt-shift-i = 'move-node-to-workspace I'
+    alt-shift-m = 'move-node-to-workspace M'
+    alt-shift-n = 'move-node-to-workspace N'
+    alt-shift-o = 'move-node-to-workspace O'
+    alt-shift-p = 'move-node-to-workspace P'
+    alt-shift-q = 'move-node-to-workspace Q'
+    alt-shift-r = 'move-node-to-workspace R'
+    alt-shift-s = 'move-node-to-workspace S'
+    alt-shift-t = 'move-node-to-workspace T'
+    alt-shift-u = 'move-node-to-workspace U'
+    alt-shift-v = 'move-node-to-workspace V'
+    alt-shift-w = 'move-node-to-workspace W'
+    alt-shift-x = 'move-node-to-workspace X'
+    alt-shift-y = 'move-node-to-workspace Y'
+    alt-shift-z = 'move-node-to-workspace Z'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#workspace-back-and-forth
+    alt-tab = 'workspace-back-and-forth'
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#move-workspace-to-monitor
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    # See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/commands.adoc#mode
+    alt-shift-semicolon = 'mode service'
+
+# 'service' binding mode declaration.
+# See: https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#binding-modes
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main'] # reset layout
+    f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+    # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+    #s = ['layout sticky tiling', 'mode main']
+
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']

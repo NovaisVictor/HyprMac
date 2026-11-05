@@ -1,0 +1,72 @@
+= hyprmac-preselect(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-preselect
+// tag::purpose[]
+:manpurpose: Choose on which side of the focused window the next new window is placed
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac preselect [-h|--help] [--window-id <window-id>] (left|down|up|right|cancel)
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+When the next tiling window is placed in xref:guide.adoc#tree[the tree] and the most recent tiling window of the workspace is the preselected window,
+the preselected window is replaced with a new tiling container that contains the preselected window and the new window:
+
+* `left` and `right` create an `h_tiles` container, `up` and `down` create a `v_tiles` container
+* `left` and `up` put the new window before the preselected window, `right` and `down` put it after
+
+The preselection takes precedence over xref:guide.adoc#new-window-placement[`new-window-placement`], whether it's `sibling` or `dwindle`.
+Unlike `dwindle`, it also splits a window that is the only window of its container (for example, the only window of the workspace).
+
+The new container keeps its orientation even if `enable-normalization-opposite-orientation-for-nested-containers` is enabled.
+Unlike xref:commands.adoc#split[split], `preselect` works with `enable-normalization-flatten-containers` enabled.
+
+The preselection is used once: it's cleared when the next window is placed, or by `preselect cancel`.
+Focusing another window doesn't clear it.
+The same placement is used when a window becomes tiling again (e.g. by `layout tiling`, or when it leaves macOS native fullscreen).
+
+The preselection isn't used while the parent container of the preselected window has `accordion` or `master` layout,
+the preselection then waits until the window is in a `tiles` container again.
+The command fails if the window isn't tiling, or if its parent container has `accordion` or `master` layout.
+
+The preselection doesn't survive HyprMac restart.
+
+`cancel`:: Clear the preselection of the window. It succeeds even if the window has no preselection.
+
+// =========================================================== Options
+include::util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// =========================================================== Examples
+include::./util/conditional-examples-header.adoc[]
+
+* Preselect with `alt-ctrl-<hjkl>`, cancel with `alt-ctrl-esc`:
++
+[source,toml]
+----
+[mode.main.binding]
+    alt-ctrl-h = 'preselect left'
+    alt-ctrl-j = 'preselect down'
+    alt-ctrl-k = 'preselect up'
+    alt-ctrl-l = 'preselect right'
+    alt-ctrl-esc = 'preselect cancel'
+----
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

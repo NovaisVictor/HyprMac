@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+env:
+  HYPRMAC_VERBOSE_BUILD: 1
+
+jobs:
+  release:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      # Same toolchain setup as the build-release job in build.yml
+      - run: ./.github/gh-actions-runner-xcode-select.sh
+      - run: brew install bash fish xcbeautify
+      - run: HOMEBREW_DISABLE_LOAD_FORMULA=1 brew update # Needed for swiftly :(
+      - run: brew install swiftly
+      - run: swiftly init --skip-install --assume-yes --verbose && swiftly install # Installs the version from .swift-version
+      - run: swiftly run swift --version
+
+      - name: Build
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          # build-release.sh embeds VERSION in the app (MARKETING_VERSION) and in the CLI (__aero_build section),
+          # and packs .release/HyprMac-$VERSION.zip with HyprMac.app, bin/hyprmac, manpage/, shell-completion/ and legal/.
+          # "-" is the ad-hoc identity: build-release.sh signs the app and the CLI, validate-release-binaries.sh checks them
+          ./build-release.sh --build-version "$VERSION" --codesign-identity -
+          ARCHIVE=".release/HyprMac-$VERSION.zip"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
+          echo "SHA256=$(shasum -a 256 "$ARCHIVE" | cut -d ' ' -f 1)" >> "$GITHUB_ENV"
+
+      - name: cat ./.release/xcodebuild.log
+        if: ${{ failure() }}
+        run: 'if test -f ./.release/xcodebuild.log; then cat ./.release/xcodebuild.log; fi'
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "$ARCHIVE" --title "HyprMac $VERSION" --generate-notes
+
+      - name: Update Homebrew cask
+        env:
+          TAP_DEPLOY_KEY: ${{ secrets.HOMEBREW_TAP_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$TAP_DEPLOY_KEY" > ~/.ssh/tap_key
+          chmod 600 ~/.ssh/tap_key
+          export GIT_SSH_COMMAND="ssh -i ~/.ssh/tap_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          git clone git@github.com:NovaisVictor/homebrew-tap.git tap
+          mkdir -p tap/Casks
+          sed -e "s/{{VERSION}}/$VERSION/" -e "s/{{SHA256}}/$SHA256/" packaging/hyprmac.rb.template > tap/Casks/hyprmac.rb
+          cd tap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Casks/hyprmac.rb
+          git commit -m "hyprmac $VERSION"
+          git push

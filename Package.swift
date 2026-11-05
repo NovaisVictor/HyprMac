@@ -1,0 +1,94 @@
+// swift-tools-version: 6.2
+
+import CompilerPluginSupport
+import PackageDescription
+
+let swiftSettings: [SwiftSetting] = [
+    .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+    .strictMemorySafety(),
+]
+
+let package = Package(
+    name: "AeroSpacePackage",
+    // Runtime support for parameterized protocol types is only available in macOS 13.0.0 or newer
+    // And it specifies deploymentTarget for CLI
+    platforms: [.macOS(.v13)], // #MACOS_MIN_DEPLOYMENT_TARGET
+    // Products define the executables and libraries a package produces, making them visible to other packages.
+    products: [
+        .executable(name: "hyprmac", targets: ["Cli"]),
+        // Don't use this build for release, use xcode instead
+        .executable(name: "HyprMacApp", targets: ["AeroSpaceApp"]),
+        // We only need to expose this as a product for xcode
+        .library(name: "AppBundle", targets: ["AppBundle"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/InerziaSoft/ISSoundAdditions.git", exact: "2.0.1"),
+        .package(url: "https://github.com/dduan/TOMLDecoder", exact: "0.4.5"),
+        .package(url: "https://github.com/apple/swift-collections.git", exact: "1.6.0", traits: ["UnstableHashedContainers"]),
+        .package(url: "https://github.com/soffes/HotKey.git", exact: "0.2.1"),
+        .package(url: "https://github.com/swiftlang/swift-syntax.git", exact: "604.0.0"),
+    ],
+    // Targets are the basic building blocks of a package, defining a module or a test suite.
+    // Targets can depend on other targets in this package and products from dependencies.
+    targets: [
+        // Exposes the private _AXUIElementGetWindow function to swift
+        .target(
+            name: "PrivateApi",
+            path: "Sources/PrivateApi",
+            publicHeadersPath: "include",
+        ),
+        .macro(
+            name: "Macros",
+            dependencies: [
+                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+            ],
+        ),
+        .target(
+            name: "Common",
+            dependencies: [
+                .product(name: "OrderedCollections", package: "swift-collections"),
+                .target(name: "Macros"),
+            ],
+            swiftSettings: swiftSettings,
+        ),
+        .target(
+            name: "AppBundle",
+            dependencies: [
+                .product(name: "BasicContainers", package: "swift-collections"),
+                .product(name: "OrderedCollections", package: "swift-collections"),
+                .product(name: "HotKey", package: "HotKey"),
+                .product(name: "ISSoundAdditions", package: "ISSoundAdditions"),
+                .product(name: "TOMLDecoder", package: "TOMLDecoder"),
+                .target(name: "Common"),
+                .target(name: "Macros"),
+                .target(name: "PrivateApi"),
+            ],
+            swiftSettings: swiftSettings,
+        ),
+        .executableTarget(
+            name: "AeroSpaceApp",
+            dependencies: [
+                .target(name: "AppBundle"),
+                .target(name: "Macros"),
+            ],
+            swiftSettings: swiftSettings,
+        ),
+        .executableTarget(
+            name: "Cli",
+            dependencies: [
+                .target(name: "Common"),
+                .target(name: "Macros"),
+            ],
+            swiftSettings: swiftSettings,
+        ),
+        .testTarget(
+            name: "AppBundleTests",
+            dependencies: [
+                .target(name: "AppBundle"),
+                .target(name: "Macros"),
+            ],
+            swiftSettings: swiftSettings,
+        ),
+    ],
+)

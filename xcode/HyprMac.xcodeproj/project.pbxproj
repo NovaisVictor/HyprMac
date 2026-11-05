@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4920E6A15F59183EE730C1D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F25EA29BA47AE07D9E434ABE /* Assets.xcassets */; };
+		577FBDB77676F37630FAF0FE /* AppBundle in Frameworks */ = {isa = PBXBuildFile; productRef = A2839D458EBC352BFECB954B /* AppBundle */; };
+		AC00E7FDCEB32410504DDB22 /* default-config.toml in Resources */ = {isa = PBXBuildFile; fileRef = 7FAF210B94BC8EEFDFC6E47D /* default-config.toml */; };
+		F9B10783D56A2761A70DBB6A /* AeroSpaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroSpaceApp.swift; sourceTree = "<group>"; };
+		7FAF210B94BC8EEFDFC6E47D /* default-config.toml */ = {isa = PBXFileReference; path = "default-config.toml"; sourceTree = "<group>"; };
+		92672F94AF32D69AF3AE02DE /* hyprmac-package-symlink */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "hyprmac-package-symlink"; path = "hyprmac-package-symlink"; sourceTree = SOURCE_ROOT; };
+		DF7B26F7AFBDC36F7BF9E7D3 /* HyprMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HyprMac.entitlements; sourceTree = "<group>"; };
+		E33C1B4E40A4FC68DD601FA8 /* HyprMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyprMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F25EA29BA47AE07D9E434ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18CC93B88131AEEE2917F78A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577FBDB77676F37630FAF0FE /* AppBundle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		036B14DC4378F43D4FDD8D65 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				92672F94AF32D69AF3AE02DE /* hyprmac-package-symlink */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		5E8C4B79396AFFABD66FF398 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				F25EA29BA47AE07D9E434ABE /* Assets.xcassets */,
+				DF7B26F7AFBDC36F7BF9E7D3 /* HyprMac.entitlements */,
+			);
+			name = resources;
+			path = ../resources;
+			sourceTree = "<group>";
+		};
+		5F70E63F8E55B3780B41B101 /* config-examples */ = {
+			isa = PBXGroup;
+			children = (
+				7FAF210B94BC8EEFDFC6E47D /* default-config.toml */,
+			);
+			name = "config-examples";
+			path = "../docs/config-examples";
+			sourceTree = "<group>";
+		};
+		9B5D443047FB183F5338F009 = {
+			isa = PBXGroup;
+			children = (
+				E32E4577A8550724130186F3 /* AeroSpaceApp */,
+				5F70E63F8E55B3780B41B101 /* config-examples */,
+				036B14DC4378F43D4FDD8D65 /* Packages */,
+				5E8C4B79396AFFABD66FF398 /* resources */,
+				F96C1F1C8629A12425EBE5C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E32E4577A8550724130186F3 /* AeroSpaceApp */ = {
+			isa = PBXGroup;
+			children = (
+				4507E0A4C29277C81DA9EF2B /* AeroSpaceApp.swift */,
+			);
+			name = AeroSpaceApp;
+			path = ../Sources/AeroSpaceApp;
+			sourceTree = "<group>";
+		};
+		F96C1F1C8629A12425EBE5C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E33C1B4E40A4FC68DD601FA8 /* HyprMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B21C837222925403D932E64 /* HyprMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8367B90EBF8EE3F79B18A95A /* Build configuration list for PBXNativeTarget "HyprMac" */;
+			buildPhases = (
+				6135DC9F53CE538E5EFC56CA /* Sources */,
+				65CC6060B45C643EEB641345 /* Resources */,
+				18CC93B88131AEEE2917F78A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyprMac;
+			packageProductDependencies = (
+				A2839D458EBC352BFECB954B /* AppBundle */,
+			);
+			productName = HyprMac;
+			productReference = E33C1B4E40A4FC68DD601FA8 /* HyprMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED0E463BAEA904F2D2E552E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = AD9123D51D17950906FD46CE /* Build configuration list for PBXProject "HyprMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9B5D443047FB183F5338F009;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B571C597347D63AEC09114E8 /* XCLocalSwiftPackageReference "hyprmac-package-symlink" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = F96C1F1C8629A12425EBE5C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B21C837222925403D932E64 /* HyprMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65CC6060B45C643EEB641345 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4920E6A15F59183EE730C1D8 /* Assets.xcassets in Resources */,
+				AC00E7FDCEB32410504DDB22 /* default-config.toml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6135DC9F53CE538E5EFC56CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9B10783D56A2761A70DBB6A /* AeroSpaceApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		583D3ECD78803FB91535722E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "$(HYPRMAC_CODE_SIGN_IDENTITY)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HYPRMAC_CODE_SIGN_IDENTITY = "hyprmac-codesign-certificate";
+				INFOPLIST_KEY_LSUIElement = YES;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6;
+				TOOLCHAINS = org.swift.642202610261a;
+			};
+			name = Release;
+		};
+		B2AA236D6A54E3D85F6E117A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "$(HYPRMAC_CODE_SIGN_IDENTITY)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HYPRMAC_CODE_SIGN_IDENTITY = "hyprmac-codesign-certificate";
+				INFOPLIST_KEY_LSUIElement = YES;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6;
+				TOOLCHAINS = org.swift.642202610261a;
+			};
+			name = Debug;
+		};
+		D1E0D06228E10F6EBBAC07F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ../resources/HyprMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "$(inherited) $(HYPRMAC_BUILD_INFO_LDFLAGS)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.victornovais.HyprMac;
+				PRODUCT_NAME = HyprMac;
+				SDKROOT = macosx;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+			};
+			name = Release;
+		};
+		FCC84C781D79A9DFE025E096 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ../resources/HyprMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.victornovais.HyprMac.debug;
+				PRODUCT_NAME = "HyprMac-Debug";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8367B90EBF8EE3F79B18A95A /* Build configuration list for PBXNativeTarget "HyprMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC84C781D79A9DFE025E096 /* Debug */,
+				D1E0D06228E10F6EBBAC07F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AD9123D51D17950906FD46CE /* Build configuration list for PBXProject "HyprMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2AA236D6A54E3D85F6E117A /* Debug */,
+				583D3ECD78803FB91535722E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B571C597347D63AEC09114E8 /* XCLocalSwiftPackageReference "hyprmac-package-symlink" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "hyprmac-package-symlink";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2839D458EBC352BFECB954B /* AppBundle */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppBundle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = ED0E463BAEA904F2D2E552E1 /* Project object */;
+}

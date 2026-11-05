@@ -1,0 +1,61 @@
+= hyprmac-pin(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-pin
+// tag::purpose[]
+:manpurpose: Pin the focused window, so that it stays on the screen on every workspace of its monitor
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac pin [-h|--help]     [--window-id <window-id>]
+hyprmac pin [-h|--help] on  [--window-id <window-id>] [--fail-if-noop]
+hyprmac pin [-h|--help] off [--window-id <window-id>] [--fail-if-noop]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+A pinned window is a floating window that follows the visible workspace of its monitor.
+When the monitor shows another workspace, the window moves to that workspace, and stays where it is on the screen.
+So `list-windows`, `tree` and the focus always see the pinned window on the visible workspace.
+The window doesn't take the focus from the windows of the workspace that is shown.
+
+* Pinning a tiling window makes it floating.
+Unpinning a window leaves it floating on the workspace it's on.
+* Dragging the window to another monitor with the mouse, or `move-node-to-monitor`, keeps it pinned:
+the window follows the visible workspace of the new monitor.
+* `move-node-to-workspace` and `layout tiling` unpin the window.
+* `summon-workspace` and `move-workspace-to-monitor` take the pinned windows of the moved workspace along to the other monitor.
+* `close-all-windows-but-current` doesn't close pinned windows.
+* A window shown by `scratchpad-toggle` can't be pinned, and a pinned window can't be toggled as a scratchpad.
+* A window that is pinned on an invisible workspace moves to the visible workspace of the same monitor right away.
+* The pin survives the lock screen. It's forgotten when the window is closed.
+* `%{window-is-pinned}` tells if a window is pinned.
+* The workspace switches don't produce `window-moved` events for pinned windows.
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+--fail-if-noop:: Exit with non-zero exit code if already pinned or already not pinned
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+on, off::
+`on` means pin the window. `off` means unpin the window.
+Toggle between the two if not specified
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

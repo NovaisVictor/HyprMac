@@ -1,0 +1,48 @@
+= hyprmac-eval(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-eval
+// tag::purpose[]
+:manpurpose: Send multiple commands to HyprMac at once
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac eval [-h|--help] [--stdin] [--] <hyprmac-shell-expr>
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+// todo: improve documentation. E.g. eval is more performant then sending multiple commands via CLI
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+
+--stdin::
+Capture CLIs stdin and forward it to `<hyprmac-shell-expr>`.
+If not supplied, stdin is ignored.
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+<hyprmac-shell-expr>:: This argument is HyprMac's shell expression.
+See https://github.com/NovaisVictor/HyprMac/blob/main/docs/guide.adoc#shell for more info.
+
+// =========================================================== Examples
+include::util/conditional-examples-header.adoc[]
+
+* Cycle between workspaces a, b, and c: +
+`hyprmac eval 'echo a b c | workspace --wrap-around --stdin next'`
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]

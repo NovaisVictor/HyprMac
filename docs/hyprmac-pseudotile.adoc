@@ -1,0 +1,57 @@
+= hyprmac-pseudotile(1)
+include::util/man-attributes.adoc[]
+:manname: hyprmac-pseudotile
+// tag::purpose[]
+:manpurpose: Toggle the pseudotiling mode for the focused window
+// end::purpose[]
+
+// =========================================================== Synopsis
+== Synopsis
+[verse]
+// tag::synopsis[]
+hyprmac pseudotile [-h|--help]     [--window-id <window-id>]
+hyprmac pseudotile [-h|--help] on  [--window-id <window-id>] [--fail-if-noop]
+hyprmac pseudotile [-h|--help] off [--window-id <window-id>] [--fail-if-noop]
+
+// end::synopsis[]
+
+// =========================================================== Description
+== Description
+
+// tag::body[]
+{manpurpose}
+
+A pseudotiled window keeps its place in the tiling tree, but instead of filling its tiling slot,
+it keeps its own size and is centered in the slot.
+If the size doesn't fit in the slot, the window is scaled down, keeping its aspect ratio.
+
+When pseudotiling is turned on for the first time, the window takes its last floating size,
+or its current size if it has never been floating.
+The size is remembered when pseudotiling is turned off.
+
+The `resize` command changes the slot, and the window stays centered in it.
+Resizing the window with the mouse changes the size of the window instead.
+
+The `fullscreen` command takes precedence over pseudotiling.
+Pseudotiling has no effect on floating windows.
+
+// =========================================================== Options
+include::./util/conditional-options-header.adoc[]
+
+-h, --help:: Print help
+--fail-if-noop:: Exit with non-zero exit code if already pseudotiled or already not pseudotiled
+
+--window-id <window-id>::
+include::./util/window-id-flag-desc.adoc[]
+
+// =========================================================== Arguments
+include::./util/conditional-arguments-header.adoc[]
+
+on, off::
+`on` means enter pseudotiling mode. `off` means exit pseudotiling mode.
+Toggle between the two if not specified
+
+// end::body[]
+
+// =========================================================== Footer
+include::util/man-footer.adoc[]
