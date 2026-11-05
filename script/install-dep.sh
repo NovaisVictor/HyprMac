@@ -32,7 +32,9 @@ create-marker() {
 
 if test $all == 1 || test $bundler == 1; then
     marker=$(get-marker bundler "$(cat ./Gemfile)" "$(cat ./.bundle/*)")
-    if ! test -f "$marker"; then
+    # Gemfile.lock is git-ignored, so a restored .deps cache can have the marker without it.
+    # Without the lock, bundler can't find the checkout of the git-sourced gems
+    if ! test -f "$marker" || ! test -f Gemfile.lock; then
         bundler install
         create-marker "$marker"
     fi
