@@ -25,7 +25,9 @@ cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by script/publi
   binary "HyprMac-#{version}/shell-completion/fish/hyprmac.fish",
       target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/hyprmac.fish"
 
-  Dir["#{staged_path}/HyprMac-#{version}/manpage/*"].each { |man| manpage man }
+  # Listed when the release is published: a Dir[] glob of staged_path runs before an upgrade stages the new
+  # version, so it found no man pages and the upgrade removed them
+{{MANPAGES}}
 
   zap trash: [
     "~/.hyprmac.toml",

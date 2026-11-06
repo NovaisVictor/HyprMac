@@ -21,13 +21,23 @@ if ! test -f "$archive"; then
 fi
 
 sha256=$(shasum -a 256 "$archive" | cut -d ' ' -f 1)
+tap_dir=$(mktemp -d)
+manpages="$tap_dir.manpages"
+trap 'rm -rf "$tap_dir" "$manpages"' EXIT
+# Validated before publishing anything
+unzip -Z1 "$archive" | grep -E '^HyprMac-[^/]+/manpage/[^/]+\.1$' | sed -E 's|^HyprMac-[^/]+/|  manpage "HyprMac-#{version}/|; s|$|"|' > "$manpages"
+if ! test -s "$manpages"; then
+    echo "ERROR: $archive has no man pages" > /dev/stderr
+    exit 1
+fi
+
 gh release create "v$version" "$archive" --target "$(git rev-parse HEAD)" --title "HyprMac $version" --generate-notes
 
-tap_dir=$(mktemp -d)
-trap 'rm -rf "$tap_dir"' EXIT
 git clone --quiet --depth 1 "${HYPRMAC_TAP_REMOTE:-https://github.com/NovaisVictor/homebrew-tap.git}" "$tap_dir"
 mkdir -p "$tap_dir/Casks"
-sed -e "s/{{VERSION}}/$version/" -e "s/{{SHA256}}/$sha256/" packaging/hyprmac.rb.template > "$tap_dir/Casks/hyprmac.rb"
+sed -e "s/{{VERSION}}/$version/" -e "s/{{SHA256}}/$sha256/" packaging/hyprmac.rb.template |
+    awk -v manpages="$manpages" '$0 == "{{MANPAGES}}" { while ((getline line < manpages) > 0) print line; next } { print }' \
+    > "$tap_dir/Casks/hyprmac.rb"
 git -C "$tap_dir" add Casks/hyprmac.rb
 git -C "$tap_dir" \
     -c user.name="${HYPRMAC_TAP_AUTHOR_NAME:-$(git config user.name)}" \
