@@ -37,6 +37,11 @@ If you only plan to build the debug version of HyprMac, you can run it from the 
     -   Identity Type: `Self-Signed Root`
     -   Certificate Type: `Code Signing`
 
+Releases are signed with one shared `hyprmac-codesign-certificate`: macOS ties the Accessibility and Input Monitoring
+permissions to the certificate, so they survive updates. Its PKCS#12 export is stored in the `HYPRMAC_CODESIGN_P12` and
+`HYPRMAC_CODESIGN_P12_PASSWORD` repository secrets for `release.yml`, and `release.sh --local` uses the one in your keychain.
+A new certificate makes macOS ask for the permissions once more.
+
 ## 3. Entry point scripts
 
 **Debug build**

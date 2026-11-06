@@ -43,7 +43,10 @@ if test $local == 1; then
     for tool in fish cargo bundler; do
         test -x ".deps/bin/$tool" || fail "--local needs $tool, used by build-shell-completion.sh and build-docs.sh (brew install fish rust ruby)"
     done
-    ./build-release.sh --build-version "$version" --codesign-identity -
+    # The certificate that signs every release, see dev-docs/development.md
+    security find-certificate -c hyprmac-codesign-certificate > /dev/null 2>&1 ||
+        fail "--local needs hyprmac-codesign-certificate in the keychain"
+    ./build-release.sh --build-version "$version"
     ./script/publish-release.sh "$version" ".release/HyprMac-$version.zip"
 else
     gh workflow run release.yml --ref main -f version="$version"

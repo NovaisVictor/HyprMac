@@ -36,11 +36,8 @@ cask "hyprmac" do # Generated from packaging/hyprmac.rb.template by script/publi
   ]
 
   caveats <<~EOS
-    HyprMac is ad-hoc signed and not notarized.
+    HyprMac is signed with a self-signed certificate and not notarized.
     If macOS refuses to open it, remove the quarantine attribute:
       xattr -dr com.apple.quarantine /Applications/HyprMac.app
-
-    The ad-hoc signature changes with every release, so macOS asks for the
-    Accessibility permission again after each update.
   EOS
 end

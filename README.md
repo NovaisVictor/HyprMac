@@ -51,11 +51,9 @@ brew install --cask hyprmac
 The cask installs `HyprMac.app`, the `hyprmac` CLI, the man pages and the bash, fish and zsh completions.
 
 > [!NOTE]
-> HyprMac releases are ad-hoc signed and not [notarized](https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution).
->
-> - If macOS refuses to open the app, remove the quarantine attribute:
->   `xattr -dr com.apple.quarantine /Applications/HyprMac.app`
-> - macOS asks for the Accessibility permission again after every update, because the ad-hoc signature changes with each release.
+> HyprMac releases are signed with a self-signed certificate and not [notarized](https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution).
+> If macOS refuses to open the app, remove the quarantine attribute:
+> `xattr -dr com.apple.quarantine /Applications/HyprMac.app`
 
 HyprMac runs on macOS 13+ on Apple Silicon.
 
