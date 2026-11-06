@@ -50,8 +50,27 @@ jobs:
           path: .deps
           key: deps-macos-26-${{ hashFiles('script/install-dep.sh', 'Gemfile', 'Gemfile.lock') }}
 
-      # "-" is the ad-hoc identity: build-release.sh signs the app and the CLI, validate-release-binaries.sh checks them
-      - run: ./build-release.sh --build-version "$VERSION" --codesign-identity -
+      # The same self-signed certificate as `release.sh --local`. macOS ties the Accessibility and Input Monitoring
+      # permissions to it, so they survive updates. An ad-hoc signature changed with every build
+      - name: Import the code signing certificate
+        env:
+          P12: ${{ secrets.HYPRMAC_CODESIGN_P12 }}
+          P12_PASSWORD: ${{ secrets.HYPRMAC_CODESIGN_P12_PASSWORD }}
+        run: |
+          keychain="$RUNNER_TEMP/codesign.keychain-db"
+          keychain_password=$(openssl rand -base64 32)
+          printf '%s' "$P12" | base64 --decode > "$RUNNER_TEMP/codesign.p12"
+          security create-keychain -p "$keychain_password" "$keychain"
+          security set-keychain-settings -lut 21600 "$keychain"
+          security unlock-keychain -p "$keychain_password" "$keychain"
+          security import "$RUNNER_TEMP/codesign.p12" -k "$keychain" -f pkcs12 -P "$P12_PASSWORD" -T /usr/bin/codesign
+          # Lets codesign use the key without a UI prompt
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$keychain_password" "$keychain" > /dev/null
+          security list-keychains -d user -s "$keychain" $(security list-keychains -d user | tr -d '"')
+          rm "$RUNNER_TEMP/codesign.p12"
+
+      # build-release.sh signs the app and the CLI with hyprmac-codesign-certificate, validate-release-binaries.sh checks them
+      - run: ./build-release.sh --build-version "$VERSION"
 
       - name: cat ./.release/xcodebuild.log
         if: ${{ failure() }}
